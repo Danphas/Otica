@@ -1,0 +1,125 @@
+.logo {
+  width: 150px;
+}
+
+body {
+  margin: 0;
+  height: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background-color: #2c2a2a;
+  padding: 0 10px;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+ul li:nth-child(2) a {
+  color: red;
+  margin-left: 10px;
+}
+
+/**/
+
+.search-box :hover,
+.search-box :focus {
+  background-color: white;
+}
+
+.search-text {
+  margin: 1px solid;
+  background-color: #2c2a2a;
+  border-radius: 15px;
+  box-shadow: none;
+  border: 1px solid white;
+  padding-left: 10px;
+}
+
+.user {
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: medium;
+}
+
+/**/
+
+.box-client {
+  padding: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+#edit-client {
+  float: right;
+  padding: 10px;
+}
+
+.edit-img {
+  width: 25px;
+}
+
+/**/
+
+.table-orders th div {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Estilos para o botão */
+.b-compra button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Estilos gerais da tabela */
+.table-orders {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.table-orders thead tr {
+  border-top: 1px solid;
+}
+
+.table-orders th,
+.table-orders td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-orders tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table-orders a {
+  text-decoration: none;
+  color: #0366d6;
+}
+
+/**/

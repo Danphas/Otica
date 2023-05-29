@@ -1,0 +1,146 @@
+.logo {
+  width: 150px;
+}
+
+body {
+  margin: 0;
+  height: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background-color: #2c2a2a;
+  padding: 0 10px;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+ul li:nth-child(2) a {
+  color: red;
+  margin-left: 10px;
+}
+
+/**/
+
+a{
+  text-decoration: none;
+}
+
+.search-box :hover,
+.search-box :focus {
+  background-color: white;
+}
+
+.search-text {
+  margin: 1px solid;
+  background-color: #2c2a2a;
+  border-radius: 15px;
+  box-shadow: none;
+  border: 1px solid white;
+  padding-left: 10px;
+}
+
+.user {
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: medium;
+}
+
+/**/
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+.valor {
+  width: 80%;
+  height: 10px;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: vertical;
+}
+
+.form-container {
+  width: 400px;
+  padding: 20px;
+  background-color: #c5c5c5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+.form-container label {
+  display: inline-block;
+  width: 50%;
+  margin: 5px;
+  color: #000000;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.form-container input[type="text"]{
+  width: 80%;
+  height: 10px;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: vertical;
+}
+
+.form-container textarea {
+    width: 85%;
+    height: 80px;
+    padding: 15px;
+    margin: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: vertical;
+}
+
+.form-container .row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.form-container button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #45a049;
+}
