@@ -26,7 +26,7 @@ $resultado = $mysqli->query($sql);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Danpha's</title>
+    <title>Otica Cientifica</title>
 </head>
 
 <body>
@@ -89,12 +89,16 @@ $resultado = $mysqli->query($sql);
                         echo "<tr>";
                         echo "<td><a href='/Cliente/cliente.php?id=" . $row['id_cliente'] . "'>" . $row['id_cliente'] . "</a></td>";
                         echo "<td><a href='/Cliente/cliente.php?id=" . $row['id_cliente'] . "'>" . $row['nome_cliente'] . "</a></td>";
-                        echo "<td>" . $row['cpf'] . "</td>";
+
+                        $cpf_formatado = substr_replace($row['cpf'], '.', 3, 0);
+                        $cpf_formatado = substr_replace($cpf_formatado, '.', 7, 0);
+                        $cpf_formatado = substr_replace($cpf_formatado, '-', 11, 0);
+                        echo "<td>" . $cpf_formatado . "</td>";
                         echo "<td>" . $row['cidade'] . "</td>";
                         echo "<td>" . $row['oe'] . "</td>";
                         echo "<td>" . $row['od'] . "</td>";
                         echo "<td>" . $row['valor'] . "</td>";
-                        echo "<td>" . $row['data_compra'] . "</td>";
+                        echo "<td>" . date("d-m-Y", strtotime($row['data_compra'])) . "</td>";
                         echo "</tr>";
                     }
                 }
