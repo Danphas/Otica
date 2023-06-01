@@ -1,5 +1,5 @@
 .logo {
-  width: 150px;
+  width: 110px;
 }
 
 body {
@@ -46,6 +46,13 @@ ul li:nth-child(2) a {
   padding-left: 10px;
 }
 
+.search-box button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
 .user {
   color: white;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -68,7 +75,7 @@ ul li:nth-child(2) a {
 }
 
 .container button {
-  background-color: #4CAF50;
+  background-color: #e788df;
   color: white;
   border: none;
   padding: 8px 12px;
@@ -78,7 +85,7 @@ ul li:nth-child(2) a {
 }
 
 .container button:hover {
-  background-color: #0f3a11;
+  background-color: #690561;
 }
 
 .activity {
@@ -98,18 +105,19 @@ ul li:nth-child(2) a {
 }
 
 #table-activity th {
-  background-color: #4CAF50;
+  background-color: #e788df;
   color: rgb(255, 255, 255);
   font-weight: bold;
   text-align: left;
 }
 
 #table-activity tbody tr:nth-child(even) {
-  background-color: #cac9c9;
+  background-color: #fcd9f9;
 }
 
 #table-activity tbody tr:hover {
-  background-color: #da8888;
+  background-color: #b9b9b9;
+  cursor: pointer;
 }
 
 #table-activity a {
