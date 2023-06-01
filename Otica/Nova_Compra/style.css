@@ -134,6 +134,7 @@ header {
 }
 
 .form-container button {
+  margin-left: 40%;
   background-color: transparent;
   color: white;
   padding: 10px 20px;

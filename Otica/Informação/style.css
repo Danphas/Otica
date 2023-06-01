@@ -75,6 +75,10 @@ ul li:nth-child(2) a {
   width: 25px;
 }
 
+.tbold {
+  font-style: italic;
+  font-weight: lighter;
+}
 /**/
 
 .returnb {
@@ -128,7 +132,7 @@ ul li:nth-child(2) a {
 .form-container {
   width: 450px;
   padding: 20px;
-  background-color: #d4fdd7;
+  background-color: #e788df;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

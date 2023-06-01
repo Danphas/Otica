@@ -89,6 +89,7 @@ if (isset($_POST['return'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Informação</title>
+    <link rel="icon" type="image/x-icon" href="/Img/favico.ico">
 </head>
 
 <body>

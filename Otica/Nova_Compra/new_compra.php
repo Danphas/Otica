@@ -44,6 +44,7 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Nova Compra</title>
+    <link rel="icon" type="image/x-icon" href="/Img/favico.ico">
 </head>
 
 <body>
@@ -69,23 +70,22 @@ if (isset($_POST['submit'])) {
             <form method="POST">
                 <div class="row">
                     <div class="left">
-                        <label for="od">OD</label>
+                        <label for="od" style="font-weight: bold">OD</label>
                         <input type="text" id="od" name="od" required>
 
-                        <label for="medico">Médico</label>
+                        <label for="medico" style="font-weight: bold">Médico</label>
                         <input type="text" id="medico" name="medico" required>
                     </div>
 
                     <div class="right">
-                        <label for="oe">OE</label>
+                        <label for="oe" style="font-weight: bold">OE</label>
                         <input type="text" id="oe" name="oe" required>
 
-                        <label for="valor">Valor</label>
+                        <label for="valor" style="font-weight: bold">Valor</label>
                         <input type="number" id="valor" name="valor" step="0.01" class="valor" required>
                     </div>
                 </div>
-
-                <label for="obs">Observações</label>
+                <label for="obs" style="font-weight: bold">Observações</label>
                 <textarea id="obs" name="obs"></textarea>
 
                 <button type="submit" name="submit">Enviar</button>
