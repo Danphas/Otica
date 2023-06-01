@@ -13,5 +13,7 @@ feito a formatação de alguns dados
 
 # Proximos Updates
 exclusão e melhoramente no update dos dados quando forem atualizados
+
 troca total das cores e fundos
+
 modelagem dos formularios e tabelas
