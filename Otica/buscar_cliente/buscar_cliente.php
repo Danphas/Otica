@@ -33,11 +33,11 @@ $resultado = $stmt->get_result();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Danpha's</title>
+    <title>Otica Cientifica</title>
 </head>
 
 <body>
-    <nav style="display: flex; justify-content: space-between;">
+    <nav class="navbar">
         <a href="/Index/index.php"><img src="/Img/logo.png" alt="logo" class="logo"></a>
         <form action="\buscar_cliente\buscar_cliente.php" method="GET">
             <div class="search-box">
@@ -70,7 +70,11 @@ $resultado = $stmt->get_result();
                         echo "<tr>";
                         echo "<td><a href='/Cliente/cliente.php?id=" . $row['id_cliente'] . "' class='table-row-link'>" . $row['id_cliente'] . "</a></td>";
                         echo "<td><a href='/Cliente/cliente.php?id=" . $row['id_cliente'] . "' class='table-row-link'>" . $row['nome_cliente'] . "</a></td>";
-                        echo "<td>" . $row['cpf'] . "</td>";
+                        
+                        $cpf_formatado = substr_replace($row['cpf'], '.', 3, 0);
+                        $cpf_formatado = substr_replace($cpf_formatado, '.', 7, 0);
+                        $cpf_formatado = substr_replace($cpf_formatado, '-', 11, 0);
+                        echo "<td>" . $cpf_formatado . "</td>";
                         echo "<td>" . $row['cidade'] . "</td>";
                         echo "<td>" . $row['data_nascimento'] . "</td>";
                         echo "</tr>";
