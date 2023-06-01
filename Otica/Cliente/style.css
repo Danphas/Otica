@@ -1,5 +1,5 @@
 .logo {
-  width: 150px;
+  width: 110px;
 }
 
 body {
@@ -19,7 +19,6 @@ nav {
 nav a {
   text-decoration: none;
 }
-
 
 ul {
   display: flex;
@@ -48,9 +47,16 @@ ul li:nth-child(2) a {
   padding-left: 10px;
 }
 
+.search-box button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
 .user {
   color: white;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: medium;
 }
 
@@ -58,7 +64,6 @@ ul li:nth-child(2) a {
 
 .box-client {
   padding: 10px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 #edit-client {
@@ -70,18 +75,22 @@ ul li:nth-child(2) a {
   width: 25px;
 }
 
+.tbold {
+  font-style: italic;
+  font-weight: lighter;
+}
+
 /**/
 
 .table-orders th div {
-  background-color: #4CAF50;
+  background-color: #e788df;
   color: white;
   padding: 10px;
   border-radius: 5px;
 }
 
-/* Estilos para o botão */
 .b-compra button {
-  background-color: #4CAF50;
+  background-color: #e788df;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -93,7 +102,6 @@ ul li:nth-child(2) a {
   cursor: pointer;
 }
 
-/* Estilos gerais da tabela */
 .table-orders {
   border-collapse: collapse;
   width: 100%;
@@ -114,7 +122,12 @@ ul li:nth-child(2) a {
 }
 
 .table-orders tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #fcd9f9;
+}
+
+.table-orders tbody tr:hover {
+  background-color: #b9b9b9;
+  cursor: pointer;
 }
 
 .table-orders a {
