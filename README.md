@@ -9,6 +9,7 @@ controle de vendas
 v2
 Foi feito a troca da cor, o ajuste nas tabelas
 feito a formatação de alguns dados
+
 troca total das cores e fundos
 
 
