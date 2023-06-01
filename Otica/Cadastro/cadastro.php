@@ -35,7 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($resultado) {
             echo "Dados do cliente foram adicionados com sucesso ao banco de dados.";
-
             $idCliente = $novoIdCliente;
             header("Location: /Cliente/cliente.php?id=$idCliente");
             exit;
@@ -56,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Danpha's</title>
+    <title>Cadastro</title>
 </head>
 
 <body>
@@ -103,9 +102,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                                 <label for="email">E-mail</label>
                                 <input type="email" id="email" name="email" required>
-
-                                <label for="cidade">Cidade</label>
-                                <input type="text" id="cidade" name="cidade" required>
                             </div>
                             <div class="right">
                                 <label for="telefone">Telefone</label>
@@ -114,6 +110,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <label for="celular">Celular</label>
                                 <input type="text" id="celular" name="celular">
 
+                                <label for="cidade">Cidade</label>
+                                <input type="text" id="cidade" name="cidade" required>
+                            </div>
+                            <div class="center">
                                 <label for="data_nascimento">Data de Nascimento</label>
                                 <input type="date" id="data_nascimento" name="data_nascimento">
                             </div>
