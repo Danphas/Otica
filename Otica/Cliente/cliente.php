@@ -52,7 +52,7 @@ if (isset($_GET['id'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Danpha's</title>
+    <title>Otica Cientifica</title>
 </head>
 
 <body>
@@ -81,38 +81,45 @@ if (isset($_GET['id'])) {
         <div class="box-client">
             <div id="direita">
                 <span style="float: right; margin: 5px;">
-                    Usuario Responsavel :
+                    <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Usuario Responsavel
+                        :</span>
                     <span class="tbold">
                         <?php echo $usuario_responsavel; ?>
                     </span><br>
-                    Email :
+                    <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Email :</span>
                     <span class="tbold">
                         <?php echo $email; ?>
                     </span><br>
-                    Celular :
+                    <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Celular :</span>
                     <span class="tbold">
                         <?php echo $celular; ?>
                     </span><br>
-                    Telefone :
+                    <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Telefone :</span>
                     <span class="tbold">
                         <?php echo $telefone; ?>
                     </span><br>
                 </span>
             </div>
             <div id="esquerda" style="margin: 5px;">
-                Cliente ID :
+                <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Cliente ID :</span>
                 <span class="tbold">
                     <?php echo $cliente_id; ?>
                 </span><br>
-                Nome Cliente :
+                <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Nome Cliente :</span>
                 <span class="tbold">
                     <?php echo $nome_cliente; ?>
                 </span><br>
-                CPF/CNPJ :
+                <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">CPF/CNPJ :</span>
                 <span class="tbold">
-                    <?php echo $cpf; ?>
+                    <?php
+                    $cpf;
+                    $formatted_cpf = substr_replace($cpf, '.', 3, 0);
+                    $formatted_cpf = substr_replace($formatted_cpf, '.', 7, 0);
+                    $formatted_cpf = substr_replace($formatted_cpf, '-', 11, 0);
+                    echo $formatted_cpf;
+                    ?>
                 </span><br>
-                Cidade :
+                <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Cidade :</span>
                 <span class="tbold">
                     <?php echo $cidade; ?>
                 </span><br>
@@ -128,17 +135,6 @@ if (isset($_GET['id'])) {
                 <button><a
                         href="/Nova_Compra/new_compra.php?id=<?php echo $cliente_id; ?>&ic=<?php echo $next_id_compra; ?>"
                         style="text-decoration: none; color: white;">Nova Compra</a></button>
-            </div>
-            <div class="data-table" style="float: right; margin: 5px;">
-                <label for="filtro">Filtro</label>
-                <select id="filtro" name="filtro">
-                    <option value="id-filtro">ID Compra</option>
-                    <option value="oe">OE</option>
-                    <option value="od">OD</option>
-                    <option value="valor">Valor</option>
-                    <option value="dia">Dia</option>
-                    <option value="responsavel">Responsável</option>
-                </select>
             </div>
         </div>
 
@@ -207,7 +203,7 @@ if (isset($_GET['id'])) {
                     echo "<td>R$ $valor</td>";
                     echo "<td>$medico</td>";
                     echo "<td>$obs</td>";
-                    echo "<td>$data_compra</td>";
+                    echo "<td>" . date("d-m-Y", strtotime($data_compra)) . "</td>";
                     echo "<td>$responsavel</td>";
                     echo "</tr>";
                 }
@@ -215,8 +211,6 @@ if (isset($_GET['id'])) {
             </tbody>
         </table>
     </div>
-
-
 </body>
 
 </html>
