@@ -1,5 +1,5 @@
 .logo {
-  width: 150px;
+  width: 110px;
 }
 
 body {
@@ -20,7 +20,6 @@ nav a {
   text-decoration: none;
 }
 
-
 ul {
   display: flex;
   justify-content: space-between;
@@ -34,7 +33,8 @@ ul li:nth-child(2) a {
 
 /**/
 
-.search-box :hover, .search-box :focus{
+.search-box :hover,
+.search-box :focus {
   background-color: white;
 }
 
@@ -47,9 +47,16 @@ ul li:nth-child(2) a {
   padding-left: 10px;
 }
 
+.search-box button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
 .user {
   color: white;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: medium;
 }
 
@@ -57,7 +64,6 @@ ul li:nth-child(2) a {
 
 .box-client {
   padding: 10px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 #edit-client {
@@ -120,9 +126,9 @@ ul li:nth-child(2) a {
 }
 
 .form-container {
-  width: 400px;
+  width: 450px;
   padding: 20px;
-  background-color: #c5c5c5;
+  background-color: #d4fdd7;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -138,10 +144,10 @@ ul li:nth-child(2) a {
   width: 50%;
   margin: 5px;
   color: #000000;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
-.form-container input[type="text"]{
+.form-container input[type="text"] {
   width: 80%;
   height: 10px;
   padding: 10px;
@@ -152,14 +158,14 @@ ul li:nth-child(2) a {
 }
 
 .form-container textarea {
-    width: 85%;
-    height: 80px;
-    padding: 15px;
-    margin: 5px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    resize: vertical;
+  width: 85%;
+  height: 80px;
+  padding: 15px;
+  margin: 5px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: vertical;
 }
 
 .form-container .row {
@@ -168,20 +174,17 @@ ul li:nth-child(2) a {
   margin: 10px;
 }
 
-.form-container button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-top: 20px;
-  border: none;
-  border-radius: 4px;
-  background-color: #4caf50;
-  color: #ffffff;
+.returnb button {
+  background-color: transparent;
+  color: white;
+  padding: 10px 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
   font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.form-container button:hover {
-  background-color: #45a049;
+.returnb button:hover {
+  background-color: #690561;
 }
