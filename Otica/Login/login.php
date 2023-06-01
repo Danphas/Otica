@@ -44,10 +44,10 @@ if (isset($_POST['login']) && isset($_POST['senha'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="\Img\favicon.ico" type="image/x-icon">
     <title>
         Otica Cientifica
     </title>
-    <link rel="icon" type="image/x-icon" href="/Img/favico.ico">
 </head>
 
 <body>
