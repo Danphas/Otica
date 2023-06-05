@@ -12,6 +12,9 @@ feito a formatação de alguns dados
 
 troca total das cores e fundos
 
+v2.1
+Modelamento da tela de login
+
 
 # Proximos Updates
 exclusão e melhoramente no update dos dados quando forem atualizados
