@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 
 $host = "www.otica";
 $database = "db_otica";
@@ -34,43 +32,35 @@ if (isset($_POST['login']) && isset($_POST['senha'])) {
         $error = "Falha ao fazer login";
     }
 }
+
 ?>
-
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="\Img\favicon.ico" type="image/x-icon">
-    <title>
-        Otica Cientifica
-    </title>
+    <title>Otica Cientifica</title>
 </head>
-
 <body>
-    <nav>
-        <section class="logo">
-            <a href="/Login/login.php"><img src="/Img/logo.png" alt="logo" class="logo"></a>
-        </section>
-    </nav>
-
-    <header>
-        <div class="login">
-            <form action="" method="POST">
-                <label for="login">Login</label>
-                <input type="text" id="login" name="login" required>
-                <label for="senha">Senha</label>
-                <input type="password" id="senha" name="senha" required>
-                <button type="submit">Entrar</button>
+    <section class="container">
+        <div class="left">
+            <form action="#">
+                <h2>Login</h2>
+                <input type="text" name="login" placeholder="Login">
+                <input type="password" name="senha" placeholder="Senha">
+                <button type="submit">Enviar</button>
             </form>
             <?php if (isset($error)) {
                 echo "<p>$error</p>";
             } ?>
         </div>
-    </header>
-</body>
 
+        <div class="right">
+            <img src="/Otica teste/login.png" alt="Otica Cientifica">
+        </div>
+    </section>
+</body>
 </html>
