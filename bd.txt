@@ -11,24 +11,34 @@ CREATE TABLE adm (
 CREATE TABLE clientes (
   id_cliente INT PRIMARY KEY,
   nome_cliente VARCHAR(100) NOT NULL,
-  cpf VARCHAR(11) NOT NULL,
-  email VARCHAR(140),
-  cidade VARCHAR(100),
-  telefone VARCHAR(20),
-  celular VARCHAR(20),
-  data_nascimento DATE NOT NULL,
-  data_cadastro DATE NOT NULL,
-  ususario_responsavel VARCHAR(20) NOT NULL
+  cpf VARCHAR(14),
+  cidade VARCHAR(30),
+  telefone VARCHAR(20) NOT NULL,
+  celular VARCHAR(20) NOT NULL,
+  data_nascimento DATE,
+  data_cadastro DATE,
+  responsavel VARCHAR(24)
 );
 
 CREATE TABLE vendas (
   id_cliente INT,
   id_compra INT,
-  oe FLOAT NOT NULL,
-  od FLOAT NOT NULL,
-  valor DECIMAL(10, 2) NOT NULL,
-  medico VARCHAR(100),
-  obs TEXT,
+  id_geral INT,
+  data_consulta DATE NOT NULL,
+  medico VARCHAR(50),
+  oe FLOAT,
+  dnp_oe FLOAT,
+  altura_oe FLOAT,
+  od FLOAT ,
+  dnp_od FLOAT,
+  altura_od FLOAT,
+  adicao_oe FLOAT,
+  adicao_od FLOAT,
+  armacao VARCHAR(24),
+  nr_pedido INT,
+  lente VARCHAR(24),
+  valor DECIMAL(10, 2),
+  observacao TEXT,
   data_compra DATE NOT NULL,
-  ususario_responsavel VARCHAR(20) NOT NULL
+  responsavel VARCHAR(24) NOT NULL
 );
