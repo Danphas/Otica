@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $host = "www.otica";
 $database = "db_otica";
@@ -8,6 +9,7 @@ $senha = "";
 $mysqli = new mysqli($host, $usuario, $senha, $database);
 if ($mysqli->connect_errno) {
     echo "Falha ao Conectar: (" . $mysqli->connect_errno . ")" . $mysqli->connect_error;
+    exit();
 }
 
 if (isset($_POST['login']) && isset($_POST['senha'])) {
@@ -32,10 +34,11 @@ if (isset($_POST['login']) && isset($_POST['senha'])) {
         $error = "Falha ao fazer login";
     }
 }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,14 +47,15 @@ if (isset($_POST['login']) && isset($_POST['senha'])) {
     <link rel="icon" href="\Img\favicon.ico" type="image/x-icon">
     <title>Otica Cientifica</title>
 </head>
+
 <body>
     <section class="container">
         <div class="left">
-            <form action="#">
+            <form method="POST">
                 <h2>Login</h2>
                 <input type="text" name="login" placeholder="Login">
                 <input type="password" name="senha" placeholder="Senha">
-                <button type="submit">Enviar</button>
+                <button type="submit">Entrar</button>
             </form>
             <?php if (isset($error)) {
                 echo "<p>$error</p>";
@@ -59,8 +63,9 @@ if (isset($_POST['login']) && isset($_POST['senha'])) {
         </div>
 
         <div class="right">
-            <img src="/Otica teste/login.png" alt="Otica Cientifica">
+            <img src="/Img/login" alt="Otica Cientifica">
         </div>
     </section>
 </body>
+
 </html>

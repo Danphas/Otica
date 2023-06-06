@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('protect.php');
 
 $host = "www.otica";
@@ -50,8 +51,11 @@ $resultado = $mysqli->query($sql);
     </nav>
     <br>
     <div class="container">
-        <button><a href="/Cadastro/cadastro.php" style="text-decoration: none; color: white; ">Novo
-                Cliente</a></button>
+        <button id="nc"><a href="/Cadastro/cadastro.php" 
+        style="text-decoration: none; color: white;">Novo Cliente</a></button>
+
+        <button id="c"><a href="/Consultar/consultar.php"
+                style="text-decoration: none;"></a>Consultar</button>
     </div>
 
     <div class="activity">
@@ -68,7 +72,7 @@ $resultado = $mysqli->query($sql);
                         <span>CPF</span>
                     </th>
                     <th>
-                        <span>Cidade</span>
+                        <span>Valor</span>
                     </th>
                     <th>
                         <span>OE</span>
@@ -77,10 +81,16 @@ $resultado = $mysqli->query($sql);
                         <span>OD</span>
                     </th>
                     <th>
-                        <span>Valor</span>
+                        <span>Cidade</span>
                     </th>
                     <th>
-                        <span>Data</span>
+                        <span>Observações</span>
+                    </th>
+                    <th>
+                        <span>Data Compra</span>
+                    </th>
+                    <th>
+                        <span>Responsavel</span>
                     </th>
                 </tr>
             </thead>
@@ -97,10 +107,10 @@ $resultado = $mysqli->query($sql);
                         $cpf_formatado = substr_replace($cpf_formatado, '.', 7, 0);
                         $cpf_formatado = substr_replace($cpf_formatado, '-', 11, 0);
                         echo "<td>" . $cpf_formatado . "</td>";
-                        echo "<td>" . $row['cidade'] . "</td>";
+                        echo "<td>" . $row['valor'] . "</td>";
                         echo "<td>" . $row['oe'] . "</td>";
                         echo "<td>" . $row['od'] . "</td>";
-                        echo "<td>" . $row['valor'] . "</td>";
+                        echo "<td>" . $row['cidade'] . "</td>";
                         echo "<td>" . date("d-m-Y", strtotime($row['data_compra'])) . "</td>";
                         echo "</tr>";
                     }

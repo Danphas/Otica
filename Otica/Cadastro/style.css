@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .logo {
   width: 110px;
 }
@@ -13,7 +17,7 @@ nav {
   align-items: center;
   height: 50px;
   background-color: #2c2a2a;
-  padding: 0 10px;
+  padding: 10px;
 }
 
 nav a {
@@ -60,19 +64,21 @@ ul li:nth-child(2) a {
 
 .b-cadcan {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 20px;
 }
 
 .b-cadcan button {
+  font-family: "Arya";
+  font-style: normal;
+  font-size: 18px;
   color: white;
-  border: none;
   padding: 8px 12px;
   margin: 10px;
-  border-radius: 10px;
   text-decoration: none;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  width: 100px;
 }
 
 .b-cadcan a {
@@ -81,62 +87,237 @@ ul li:nth-child(2) a {
 }
 
 #cad button {
-  background-color: green;
+  background: #03e434;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+}
+
+#cad button:hover {
+  background: #013d0e;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: #013d0e;
+  border-radius: 20px;
 }
 
 #cancel button {
-  background-color: red;
+  background: #ff0000;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
 }
 
-.form {
-  text-align: center;
+#cancel button:hover {
+  background: #630000;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: #630000;
+  border-radius: 20px;
 }
+/**/
 
-.container {
+.form-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  justify-content: center;
+  text-align: center;
 }
 
 .section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+}
+
+.center-form {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  width: 90%;
-  margin-top: 20px;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: #f4f2f2;
 }
 
-.section label {
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+}
+
+.left,
+.right {
+  width: 450px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-center {
+  width: 600px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.container label {
+  font-family: "Arsenal", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: #000000;
+}
+
+.container header {
+  font-family: "Artifika", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.container input[type="text"],
+.container input[type="date"],
+.container select {
+  width: 170px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 6px 2px #da60dd;
+  border-radius: 10px;
+}
+
+.obs {
+  text-align: center;
+}
+
+.obs label {
   display: block;
+  font-family: "Arsenal", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: #000000;
+}
+
+.obs textarea {
+  width: 450px;
+  height: 70px;
+  padding: 8px 12px;
   margin-bottom: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 6px 2px #da60dd;
+  border-radius: 10px;
 }
 
-.section input,
-.section select {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 100%;
+#adicao_od,
+#adicao_oe {
+  width: 80px;
+  height: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 6px 2px #da60dd;
+  border-radius: 10px;
   margin-bottom: 10px;
+  padding: 8px 12px;
 }
 
-.section .left,
-.section .right,
-.center {
-  width: calc(50% - 10px);
+.adicao-inputs {
+  display: flex;
+  gap: 10px;
 }
 
-@media screen and (max-width: 768px) {
-  .section .left,
-  .section .right,
-  .center {
+.container input[type="text"]:focus,
+.container input[type="date"]:focus,
+.container select:focus,
+.container textarea:focus {
+  outline: none;
+  background: #f4f2f2;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 6px 2px #bd0fc0;
+  border-radius: 10px;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: row;
+}
+
+.l-left,
+.r-left {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: row;
+}
+
+.r-left,
+.r-right {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.center-column {
+  display: flex;
+  flex-direction: row;
+}
+
+.c-left,
+.c-right {
+  flex: 1;
+  padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .form-center {
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  form {
     width: 100%;
   }
 }
