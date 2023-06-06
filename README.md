@@ -1,22 +1,16 @@
-# Otica
-v1
-Projeto de controle, cadastro 
-de cliente e vendas
-visando um projeto basico para a adição de usuarios
-controle adm
-controle de vendas
+# Projeto
 
-v2
-Foi feito a troca da cor, o ajuste nas tabelas
-feito a formatação de alguns dados
+Projeto feito para gerenciamento de usuarios e compras
+cafastrando, adicionando, atualizando os dados no bd local
 
-troca total das cores e fundos
+# Updates
 
-v2.1
-Modelamento da tela de login
+v1 
+update da tela de login
+update das cores da aplicação
+update na tela de cadastro e no codigo para cadastro
 
 
 # Proximos Updates
-exclusão e melhoramente no update dos dados quando forem atualizados
-
-modelagem dos formularios e tabelas
+Arrumar a pesquisa de dados na tela Index, Cliente
+Reformular as telas de Nova Compra, Cliente, Consultar, Edição das informações(venda e cadastro), Buscar Cliente
