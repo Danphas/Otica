@@ -80,6 +80,14 @@ ul li:nth-child(2) a {
   background-color: #690561;
 }
 
+#c a {
+  color: white;
+}
+
+#c a:hover {
+  color: black;
+}
+
 #c {
   width: 134px;
   background-color: black;

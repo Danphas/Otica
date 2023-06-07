@@ -15,7 +15,7 @@ if ($mysqli->connect_errno) {
 
 $currentDate = date("Y-m-d");
 
-$sql = "SELECT c.id_cliente, c.nome_cliente, c.cpf, v.valor, v.oe, v.od, c.cidade, v.observacao, v.data_compra, v.responsavel
+$sql = "SELECT c.id_cliente, c.nome_cliente, c.cpf, v.valor, v.oe, v.od, c.cidade, v.observacao, v.data_compra, v.responsavel, v.id_compra
         FROM Vendas v
         INNER JOIN Clientes c ON c.id_cliente = v.id_cliente
         WHERE v.data_compra = '$currentDate'";
@@ -63,7 +63,8 @@ if (!$resultado) {
         <button id="nc"><a href="/Cadastro/cadastro.php" style="text-decoration: none; color: white;">Novo
                 Cliente</a></button>
 
-        <button id="c"><a href="/Consultar/consultar.php" style="text-decoration: none;"></a>Consultar</button>
+        <button id="c"><a href="/Consultar/consultar.php" style="text-decoration: none;">Consultar</a>
+        </button>
     </div>
 
     <div class="activity">
@@ -114,7 +115,7 @@ if (!$resultado) {
                     echo "<td>" . $row['od'] . "</td>";
                     echo "<td>" . $row['cidade'] . "</td>";
                     echo "<td>" . $row['observacao'] . "</td>";
-                    echo "<td>" . date("d/m/Y", strtotime($row['data_compra'])) . "</td>";
+                    echo "<td><a href='/Informação/id_protocolo.php?id=" . $row['id_cliente'] . "&ic=" . $row['id_compra'] . "'>" . date("d/m/Y", strtotime($row['data_compra'])) . "</a></td>";
                     echo "<td>" . $row['responsavel'] . "</td>";
                     echo "</tr>";
                 }

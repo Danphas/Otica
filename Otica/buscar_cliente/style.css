@@ -71,50 +71,82 @@ ul li:nth-child(2) a {
 /**/
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
+  padding-top: 100px;
 }
 
 table {
+  width: 80%;
+  background: linear-gradient(
+    180deg,
+    #f89dfb 0%,
+    #ffffff 110.21%,
+    rgba(248, 157, 251, 0) 110.21%,
+    rgba(248, 157, 251, 0) 110.21%
+  );
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(5px 0px 5px rgba(223, 126, 225, 0.765625));
+  border-radius: 50px 50px 0px 0px;
+  margin: auto;
+  margin-top: 30px;
+  display: table;
+  table-layout: fixed;
+}
+
+thead {
+  display: table-header-group;
+  color: white;
+}
+
+tbody {
+  display: table-row-group;
   background-color: white;
-  border-collapse: collapse;
-  width: 700px;
+}
+
+tr {
+  display: table-row;
+  margin-bottom: 10px;
+}
+
+th,
+td {
+  text-align: left;
+  text-align: center;
+}
+
+th:first-child,
+td:first-child {
+  border-left: none;
+}
+
+th:last-child,
+td:last-child {
+  border-right: none;
 }
 
 th {
-  background-color: #e788df;
-  font-size: larger;
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
-  font-weight: bold;
-  text-align: center;
+  font-family: "Arya";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 30px;
+  color: #ffffff;
 }
 
 td {
-  text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 25px;
+  line-height: 20px;
+  color: #000000;
+  padding: 10px;
 }
 
-.table-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.table-row-link {
-  display: block;
+table a {
   text-decoration: none;
-  color: #0366d6;
+  color: rgb(183, 0, 255);
 }
 
-table tbody tr:nth-child(even) {
-  background-color: #fcd9f9;
-}
-
-table tbody tr:hover {
-  background-color: #b9b9b9;
-  cursor: pointer;
+table a:hover {
+  color: red;
 }

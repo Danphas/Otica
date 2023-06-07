@@ -12,30 +12,37 @@ if ($mysqli->connect_errno) {
     echo "Falha ao Conectar: (" . $mysqli->connect_errno . ")" . $mysqli->connect_error;
 }
 
+$id_cliente = isset($_GET['id']) ? $_GET['id'] : '';
+$id_compra = isset($_GET['ic']) ? $_GET['ic'] : '';
+
 if (isset($_GET['ic'])) {
-    $id_compra = isset($_GET['ic']) ? $_GET['ic'] : null;
-} else {
-    exit();
-}
+    $sql_venda = "SELECT * FROM vendas WHERE id_compra = '$id_compra'";
+    $result_venda = $mysqli->query($sql_venda);
 
-if (!empty($id_compra)) {
-    $sql_vendas = "SELECT * FROM vendas WHERE id_compra = '$id_compra'";
-    $result_vendas = $mysqli->query($sql_vendas);
-
-    if ($result_vendas->num_rows == 1) {
-        $row_vendas = $result_vendas->fetch_assoc();
-        $od = $row_vendas['od'];
-        $oe = $row_vendas['oe'];
-        $medico = $row_vendas['medico'];
-        $valor = $row_vendas['valor'];
-        $obs = $row_vendas['obs'];
+    if ($result_venda->num_rows == 1) {
+        $row_venda = $result_venda->fetch_assoc();
+        $data_compra = $row_venda['data_compra'];
+        $data_consulta = $row_venda['data_consulta'];
+        $oe = $row_venda['oe'];
+        $dnp_oe = $row_venda['dnp_oe'];
+        $altura_oe = $row_venda['altura_oe'];
+        $medico = $row_venda['medico'];
+        $od = $row_venda['od'];
+        $dnp_od = $row_venda['dnp_od'];
+        $altura_od = $row_venda['altura_od'];
+        $adicao_oe = $row_venda['adicao_oe'];
+        $adicao_od = $row_venda['adicao_od'];
+        $lente = $row_venda['lente'];
+        $armacao = $row_venda['armacao'];
+        $responsavel = $row_venda['responsavel'];
+        $nr_pedido = $row_venda['nr_pedido'];
+        $valor = $row_venda['valor'];
+        $observacao = $row_venda['observacao'];
     } else {
+        echo "Venda não encontrada.";
         exit();
     }
-} else {
-    exit();
 }
-
 
 if (isset($_GET['id'])) {
     $cliente_id = $_GET['id'];
@@ -46,36 +53,43 @@ if (isset($_GET['id'])) {
     if ($result_cliente->num_rows == 1) {
         $row_cliente = $result_cliente->fetch_assoc();
         $nome_cliente = $row_cliente['nome_cliente'];
-        $email = $row_cliente['email'];
         $cpf = $row_cliente['cpf'];
+        $data_cadastro = $row_cliente['data_cadastro'];
         $cidade = $row_cliente['cidade'];
-        $usuario_responsavel = $row_cliente['usuario_responsavel'];
-        $email = $row_cliente['email'];
+        $responsavel = $row_cliente['responsavel'];
         $celular = $row_cliente['celular'];
         $telefone = $row_cliente['telefone'];
     } else {
+        echo "Cliente não encontrado.";
         exit();
     }
-
-    $sql_vendas = "SELECT * FROM vendas WHERE id_cliente = '$cliente_id'";
-    $result_vendas = $mysqli->query($sql_vendas);
-} else {
-    exit();
 }
 
-if (isset($_POST['return'])) {
-    $editedOD = $_POST['od'];
-    $editedOE = $_POST['ed'];
-    $editedMedico = $_POST['medico'];
-    $editedValor = $_POST['valor'];
-    $editedObservacoes = $_POST['obs'];
+if (isset($_POST['outras_submit'])) {
+    $data_consulta = $_POST['data_consulta'];
+    $oe = $_POST['oe'];
+    $dnp_oe = $_POST['dnp_oe'];
+    $altura_oe = $_POST['altura_oe'];
+    $medico = $_POST['medico'];
+    $od = $_POST['od'];
+    $dnp_od = $_POST['dnp_od'];
+    $altura_od = $_POST['altura_od'];
+    $adicao_oe = $_POST['adicao_oe'];
+    $adicao_od = $_POST['adicao_od'];
+    $lente = $_POST['lente'];
+    $armacao = $_POST['armacao'];
+    $responsavel = $_POST['responsavel'];
+    $nr_pedido = $_POST['nr_pedido'];
+    $valor = $_POST['valor'];
+    $observacao = $_POST['observacao'];
 
-    $sql_update = "UPDATE vendas SET od = '$editedOD', oe = '$editedOE', medico = '$editedMedico', valor = '$editedValor', obs = '$editedObservacoes' WHERE id_compra = '$id_compra'";
+    $sql_update = "UPDATE vendas SET data_consulta = '$data_consulta', oe = '$oe', dnp_oe = '$dnp_oe', altura_oe = '$altura_oe', medico = '$medico', od = '$od', dnp_od = '$dnp_od', altura_od = '$altura_od', adicao_oe = '$adicao_oe', adicao_od = '$adicao_od', lente = '$lente', armacao = '$armacao', responsavel = '$responsavel', nr_pedido = '$nr_pedido', valor = '$valor', observacao = '$observacao' WHERE id_compra = '$id_compra'";
+
+
     if ($mysqli->query($sql_update)) {
-        header("Location: /Cliente/cliente.php?id=$cliente_id");
-        exit();
+        header("Location: /Cliente/cliente.php?id=" . $cliente_id);
     } else {
-        echo "Erro ao atualizar os dados da compra: " . $mysqli->error;
+        echo "Erro ao atualizar os dados: " . $mysqli->error;
     }
 }
 ?>
@@ -89,7 +103,7 @@ if (isset($_POST['return'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="\Img\favicon.ico" type="image/x-icon">
-    <title>Informação</title>
+    <title>Nova Compra</title>
 </head>
 
 <body>
@@ -111,87 +125,167 @@ if (isset($_POST['return'])) {
     <br>
     <div class="box">
         <div id="edit-client">
-            <a href="/cad_edit/cad_edit.php"><img class="edit-img" src="/Img/edit.svg" alt="Editar"></a>
+            <a href="/cad_edit/cad_edit.php?id=<?php echo $cliente_id; ?>">
+                <img class="edit-img" src="/Img/edit.svg" alt="Editar">
+            </a>
         </div>
         <div class="box-client">
             <div id="direita">
                 <span style="float: right; margin: 5px;">
-                    <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Usuario Responsavel
+                    <span id="user-inf">Usuario Responsavel
                         :</span>
                     <span class="tbold">
-                        <?php echo $usuario_responsavel; ?>
+                        <?php echo $responsavel; ?>
                     </span><br>
-                    <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Email :</span>
+                    <span id="user-inf">Data Cadastro
+                        :</span>
                     <span class="tbold">
-                        <?php echo $email; ?>
+                        <?php echo date('d/m/Y', strtotime($data_cadastro)); ?>
                     </span><br>
-                    <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Celular :</span>
+                    <span id="user-inf">Celular :</span>
                     <span class="tbold">
                         <?php echo $celular; ?>
                     </span><br>
-                    <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Telefone :</span>
+                    <span id="user-inf">Telefone :</span>
                     <span class="tbold">
                         <?php echo $telefone; ?>
                     </span><br>
                 </span>
             </div>
             <div id="esquerda" style="margin: 5px;">
-                <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Cliente ID :</span>
+                <span id="user-inf">Cliente ID :</span>
                 <span class="tbold">
                     <?php echo $cliente_id; ?>
                 </span><br>
-                <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Nome Cliente :</span>
+                <span id="user-inf">Nome Cliente :</span>
                 <span class="tbold">
                     <?php echo $nome_cliente; ?>
                 </span><br>
-                <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">CPF/CNPJ :</span>
+                <span id="user-inf">CPF/CNPJ :</span>
                 <span class="tbold">
                     <?php
-                    $cpf;
-                    $formatted_cpf = substr_replace($cpf, '.', 3, 0);
-                    $formatted_cpf = substr_replace($formatted_cpf, '.', 7, 0);
-                    $formatted_cpf = substr_replace($formatted_cpf, '-', 11, 0);
-                    echo $formatted_cpf;
+                    echo $cpf;
                     ?>
                 </span><br>
-                <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Cidade :</span>
+                <span id="user-inf">Cidade :</span>
                 <span class="tbold">
                     <?php echo $cidade; ?>
                 </span><br>
             </div>
         </div>
     </div>
+    <br>
 
+    <section class="cad-user">
+        <div class="container-form center-form">
+            <div class="form">
+                <div class="container">
+                    <form method="POST">
 
-    <section class="header">
+                        <div class="b-cadcan">
+                            <div id="cad">
+                                <button type="submit" name="outras_submit" value="Enviar">Enviar</button>
+                            </div>
+                            <div id="cancel">
+                                <a href="/Index/index.php"><button type="button">Apagar</button></a>
+                            </div>
 
-        <div class="form-container">
-            <form method="POST" action="\Cliente\cliente.php?id=<?php echo $cliente_id; ?>">
-                <div class="returnb">
-                    <button type="submit" name="return">Retornar</button>
+                        </div>
+
+                        <div class="form-section">
+                            <div class="right">
+                                <header class="right-header">
+                                    <h1>
+                                        <?php echo $nome_cliente ?>
+                                    </h1>
+                                    <h2>
+                                        <?php echo date('d/m/Y', strtotime($data_compra)); ?>
+                                    </h2>
+                                </header>
+                                <div class="right-column">
+                                    <div class="r-left">
+                                        <label for="data_consulta">Data da Consulta</label>
+                                        <input type="date" id="data_consulta" name="data_consulta"
+                                            value="<?php echo $data_consulta; ?>">
+
+                                        <label for="oe">OE</label>
+                                        <input type="text" id="oe" name="oe" value="<?php echo $oe; ?>">
+
+                                        <label for="dnp_oe">DNP OE</label>
+                                        <input type="text" id="dnp_oe" name="dnp_oe" value="<?php echo $dnp_oe; ?>">
+
+                                        <label for="altura_oe">Altura OE</label>
+                                        <input type="text" id="altura_oe" name="altura_oe"
+                                            value="<?php echo $altura_oe; ?>">
+                                    </div>
+                                    <div class="r-right">
+                                        <label for="medico">Médico</label>
+                                        <input type="text" id="medico" name="medico" value="<?php echo $medico; ?>">
+
+                                        <label for="od">OD</label>
+                                        <input type="text" id="od" name="od" value="<?php echo $od; ?>">
+
+                                        <label for="dnp_od">DNP OD</label>
+                                        <input type="text" id="dnp_od" name="dnp_od" value="<?php echo $dnp_od; ?>">
+
+                                        <label for="altura_od">Altura OD</label>
+                                        <input type="text" id="altura_od" name="altura_od"
+                                            value="<?php echo $altura_od; ?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="form-center">
+                                <div class="center-column">
+                                    <div class="c-left">
+                                        <label for="adicao">Adição</label>
+                                        <div class="adicao-inputs">
+                                            <input type="number" id="adicao_oe" name="adicao_oe" step="0.05"
+                                                placeholder="0.00" value="<?php echo $adicao_oe; ?>">
+                                            <input type="number" id="adicao_od" name="adicao_od" step="0.05"
+                                                placeholder="0.00" value="<?php echo $adicao_od; ?>">
+                                        </div>
+
+                                        <label for="lente">Lente (LT)</label>
+                                        <input type="text" id="lente" name="lente" value="<?php echo $lente; ?>">
+                                    </div>
+                                    <div class="c-right">
+                                        <label for="armacao">Armação (AR)</label>
+                                        <input type="text" id="armacao" name="armacao" value="<?php echo $armacao; ?>">
+
+                                        <label for="responsavel">Responsável</label>
+                                        <select id="responsavel" name="responsavel" class="custom-select">
+                                            <option value="#"> </option>
+                                            <option value="Daniel" <?php if ($responsavel == "Daniel")
+                                                echo "selected"; ?>>Daniel</option>
+                                            <option value="Juan" <?php if ($responsavel == "Juan")
+                                                echo "selected"; ?>>Juan</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="nr_pedido">NR Pedido</label>
+                                        <input id="nr_pedido" name="nr_pedido"
+                                            style="width: 170px; padding: 8px 12px; margin-bottom: 10px; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 4px; box-sizing: border-box; box-shadow: 0px 0px 6px 2px #da60dd; border-radius: 10px;"
+                                            value="<?php echo $nr_pedido; ?>"></input>
+
+                                        <label for="valor">Valor</label>
+                                        <input type="number" id="valor" name="valor" step="1" min="0" placeholder="0.00"
+                                            style="width: 170px; padding: 8px 12px; margin-bottom: 10px; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 4px; box-sizing: border-box; box-shadow: 0px 0px 6px 2px #da60dd; border-radius: 10px;"
+                                            value="<?php echo $valor; ?>" />
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="obs">
+                                    <label for="observacao">Observação</label>
+                                    <textarea id="observacao" name="observacao"><?php echo $observacao; ?></textarea>
+                                </div>
+                            </div>
+                        </div>
+
                 </div>
-                <div class="row">
-                    <div class="left">
-                        <label for="od" style="font-weight: bold">OD</label>
-                        <input type="text" id="od" name="od" value="<?php echo $od; ?>" required>
-
-                        <label for="medico" style="font-weight: bold">Médico</label>
-                        <input type="text" id="medico" name="medico" value="<?php echo $medico; ?>" required>
-                    </div>
-
-                    <div class="right">
-                        <label for="ed" style="font-weight: bold">OE</label>
-                        <input type="text" id="ed" name="ed" value="<?php echo $oe; ?>" required>
-
-                        <label for="valor" style="font-weight: bold">Valor</label>
-                        <input type="number" id="valor" name="valor" step="0.01" class="valor"
-                            value="<?php echo $valor; ?>" required>
-                    </div>
-                </div>
-
-                <label for="obs" style="font-weight: bold">Observações</label>
-                <textarea id="obs" name="obs"><?php echo $obs; ?></textarea>
-            </form>
+                </form>
+            </div>
+        </div>
         </div>
     </section>
 </body>

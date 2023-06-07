@@ -80,42 +80,42 @@ if (isset($_GET['id'])) {
         <div class="box-client">
             <div id="direita">
                 <span style="float: right; margin: 5px;">
-                    <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Usuario Responsavel
+                    <span id="user-inf" >Usuario Responsavel
                         :</span>
                     <span class="tbold">
                         <?php echo $responsavel; ?>
                     </span><br>
-                    <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Data Cadastro
+                    <span id="user-inf" >Data Cadastro
                         :</span>
                     <span class="tbold">
                         <?php echo date('d/m/Y', strtotime($data_cadastro)); ?>
                     </span><br>
-                    <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Celular :</span>
+                    <span id="user-inf" >Celular :</span>
                     <span class="tbold">
                         <?php echo $celular; ?>
                     </span><br>
-                    <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Telefone :</span>
+                    <span id="user-inf" >Telefone :</span>
                     <span class="tbold">
                         <?php echo $telefone; ?>
                     </span><br>
                 </span>
             </div>
             <div id="esquerda" style="margin: 5px;">
-                <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Cliente ID :</span>
+                <span id="user-inf" >Cliente ID :</span>
                 <span class="tbold">
                     <?php echo $cliente_id; ?>
                 </span><br>
-                <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Nome Cliente :</span>
+                <span id="user-inf" >Nome Cliente :</span>
                 <span class="tbold">
                     <?php echo $nome_cliente; ?>
                 </span><br>
-                <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">CPF/CNPJ :</span>
+                <span id="user-inf" >CPF/CNPJ :</span>
                 <span class="tbold">
                     <?php
                     echo $cpf;
                     ?>
                 </span><br>
-                <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Cidade :</span>
+                <span id="user-inf" >Cidade :</span>
                 <span class="tbold">
                     <?php echo $cidade; ?>
                 </span><br>
@@ -134,9 +134,10 @@ if (isset($_GET['id'])) {
             </div>
         </div>
 
+        <div class="activity">
         <table class="table-orders">
             <thead>
-                <tr role="row" style="border-top: 1px solid;">
+                <tr>
                     <th>
                         <div>
                             <span>ID Compra</span>
@@ -169,7 +170,7 @@ if (isset($_GET['id'])) {
                     </th>
                     <th>
                         <div>
-                            <span>Dia</span>
+                            <span>Data Compra</span>
                         </div>
                     </th>
                     <th>
@@ -199,13 +200,14 @@ if (isset($_GET['id'])) {
                     echo "<td>R$ $valor</td>";
                     echo "<td>$medico</td>";
                     echo "<td>$obs</td>";
-                    echo "<td>" . date("d-m-Y", strtotime($data_compra)) . "</td>";
+                    echo "<td><a href='/Informação/id_protocolo.php?id=" . $cliente_id . "&ic=" . $id_compra . "'>" . date("d/m/Y", strtotime($data_compra)) . "</a></td>";
                     echo "<td>$responsavel</td>";
                     echo "</tr>";
                 }
                 ?>
             </tbody>
         </table>
+        </div>
     </div>
 </body>
 

@@ -16,7 +16,7 @@ if ($mysqli->connect_errno) {
 $dataCompra = isset($_GET['data_compra']) ? $_GET['data_compra'] : '';
 
 if (!empty($dataCompra)) {
-    $sql = "SELECT v.valor, v.responsavel, v.id_cliente, c.nome_cliente 
+    $sql = "SELECT v.valor, v.responsavel, v.id_cliente, c.nome_cliente, v.id_compra
             FROM vendas AS v
             INNER JOIN clientes AS c ON v.id_cliente = c.id_cliente
             WHERE v.data_compra = '$dataCompra'";
@@ -92,13 +92,20 @@ if (!empty($dataCompra)) {
                 <?php foreach ($rows as $row): ?>
                     <tr>
                         <td>
-                            <?php echo $row['id_cliente']; ?>
+                            <a href="/Cliente/cliente.php?id=<?php echo $row['id_cliente']; ?>">
+                                <?php echo $row['id_cliente']; ?>
+                            </a>
                         </td>
                         <td>
-                            <?php echo $row['nome_cliente']; ?>
+                            <a href="/Cliente/cliente.php?id=<?php echo $row['id_cliente']; ?>">
+                                <?php echo $row['nome_cliente']; ?>
+                            </a>
                         </td>
                         <td>
-                            <?php echo isset($dataCompra) ? date('d/m/Y', strtotime($dataCompra)) : ''; ?>
+                            <a
+                                href="/Informação/id_protocolo.php?id=<?php echo $row['id_cliente']; ?>&ic=<?php echo $row['id_compra']; ?>">
+                                <?php echo isset($dataCompra) ? date('d/m/Y', strtotime($dataCompra)) : ''; ?>
+                            </a>
                         </td>
                         <td>
                             <?php echo $row['valor']; ?>
@@ -108,7 +115,6 @@ if (!empty($dataCompra)) {
                         </td>
                     </tr>
                 <?php endforeach; ?>
-
                 <?php if (empty($rows)): ?>
                     <tr>
                         <td colspan="5">Insira a Data Desejada</td>

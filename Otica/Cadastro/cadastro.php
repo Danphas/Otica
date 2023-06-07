@@ -205,9 +205,9 @@ function obterUltimoIDGeral($mysqli)
                                     <div class="c-left">
                                         <label for="adicao">Adição</label>
                                         <div class="adicao-inputs">
-                                            <input type="number" id="adicao_oe" name="adicao_oe" step="0.05" min="0"
+                                            <input type="number" id="adicao_oe" name="adicao_oe" step="0.05"
                                                 placeholder="0.00">
-                                            <input type="number" id="adicao_od" name="adicao_od" step="0.05" min="0"
+                                            <input type="number" id="adicao_od" name="adicao_od" step="0.05"
                                                 placeholder="0.00">
                                         </div>
 

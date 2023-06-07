@@ -53,7 +53,7 @@ $resultado = $stmt->get_result();
             <li><a href="logout.php">Sair</a></li>
         </ul>
     </nav>
-    <section class="container table-container" style="margin-top: 100px;">
+    <section class="container">
         <table>
             <thead>
                 <tr>
@@ -71,13 +71,9 @@ $resultado = $stmt->get_result();
                         echo "<tr>";
                         echo "<td><a href='/Cliente/cliente.php?id=" . $row['id_cliente'] . "' class='table-row-link'>" . $row['id_cliente'] . "</a></td>";
                         echo "<td><a href='/Cliente/cliente.php?id=" . $row['id_cliente'] . "' class='table-row-link'>" . $row['nome_cliente'] . "</a></td>";
-                        
-                        $cpf_formatado = substr_replace($row['cpf'], '.', 3, 0);
-                        $cpf_formatado = substr_replace($cpf_formatado, '.', 7, 0);
-                        $cpf_formatado = substr_replace($cpf_formatado, '-', 11, 0);
-                        echo "<td>" . $cpf_formatado . "</td>";
+                        echo "<td>" . $row['cpf'] . "</td>";
                         echo "<td>" . $row['cidade'] . "</td>";
-                        echo "<td>" . $row['data_nascimento'] . "</td>";
+                        echo "<td>" . date('d/m/Y', strtotime($row['data_nascimento'])) . "</td>";
                         echo "</tr>";
                     }
                 } else {
