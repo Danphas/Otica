@@ -10,13 +10,22 @@ $senha = "";
 $mysqli = new mysqli($host, $usuario, $senha, $database);
 if ($mysqli->connect_errno) {
     echo "Falha ao Conectar: (" . $mysqli->connect_errno . ")" . $mysqli->connect_error;
+    exit;
 }
 
-$sql = "SELECT c.id_cliente, c.nome_cliente, c.cpf, c.cidade, v.oe, v.od, v.valor, v.data_compra
-        FROM Clientes c
-        INNER JOIN Vendas v ON c.id_cliente = v.id_cliente";
-$resultado = $mysqli->query($sql);
+$currentDate = date("Y-m-d");
 
+$sql = "SELECT c.id_cliente, c.nome_cliente, c.cpf, v.valor, v.oe, v.od, c.cidade, v.observacao, v.data_compra, v.responsavel
+        FROM Vendas v
+        INNER JOIN Clientes c ON c.id_cliente = v.id_cliente
+        WHERE v.data_compra = '$currentDate'";
+
+
+$resultado = $mysqli->query($sql);
+if (!$resultado) {
+    echo "Erro na consulta: (" . $mysqli->errno . ") " . $mysqli->error;
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -51,11 +60,10 @@ $resultado = $mysqli->query($sql);
     </nav>
     <br>
     <div class="container">
-        <button id="nc"><a href="/Cadastro/cadastro.php" 
-        style="text-decoration: none; color: white;">Novo Cliente</a></button>
+        <button id="nc"><a href="/Cadastro/cadastro.php" style="text-decoration: none; color: white;">Novo
+                Cliente</a></button>
 
-        <button id="c"><a href="/Consultar/consultar.php"
-                style="text-decoration: none;"></a>Consultar</button>
+        <button id="c"><a href="/Consultar/consultar.php" style="text-decoration: none;"></a>Consultar</button>
     </div>
 
     <div class="activity">
@@ -97,23 +105,18 @@ $resultado = $mysqli->query($sql);
             <tbody>
                 <?php
                 while ($row = mysqli_fetch_assoc($resultado)) {
-                    $currentDate = date("Y-m-d");
-                    if ($row['data_compra'] === $currentDate) {
-                        echo "<tr>";
-                        echo "<td><a href='/Cliente/cliente.php?id=" . $row['id_cliente'] . "'>" . $row['id_cliente'] . "</a></td>";
-                        echo "<td><a href='/Cliente/cliente.php?id=" . $row['id_cliente'] . "'>" . $row['nome_cliente'] . "</a></td>";
-
-                        $cpf_formatado = substr_replace($row['cpf'], '.', 3, 0);
-                        $cpf_formatado = substr_replace($cpf_formatado, '.', 7, 0);
-                        $cpf_formatado = substr_replace($cpf_formatado, '-', 11, 0);
-                        echo "<td>" . $cpf_formatado . "</td>";
-                        echo "<td>" . $row['valor'] . "</td>";
-                        echo "<td>" . $row['oe'] . "</td>";
-                        echo "<td>" . $row['od'] . "</td>";
-                        echo "<td>" . $row['cidade'] . "</td>";
-                        echo "<td>" . date("d-m-Y", strtotime($row['data_compra'])) . "</td>";
-                        echo "</tr>";
-                    }
+                    echo "<tr>";
+                    echo "<td><a href='/Cliente/cliente.php?id=" . $row['id_cliente'] . "'>" . $row['id_cliente'] . "</a></td>";
+                    echo "<td><a href='/Cliente/cliente.php?id=" . $row['id_cliente'] . "'>" . $row['nome_cliente'] . "</a></td>";
+                    echo "<td>" . $row['cpf'] . "</td>";
+                    echo "<td>" . $row['valor'] . "</td>";
+                    echo "<td>" . $row['oe'] . "</td>";
+                    echo "<td>" . $row['od'] . "</td>";
+                    echo "<td>" . $row['cidade'] . "</td>";
+                    echo "<td>" . $row['observacao'] . "</td>";
+                    echo "<td>" . date("d/m/Y", strtotime($row['data_compra'])) . "</td>";
+                    echo "<td>" . $row['responsavel'] . "</td>";
+                    echo "</tr>";
                 }
                 ?>
             </tbody>

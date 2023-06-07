@@ -21,11 +21,10 @@ if (isset($_GET['id'])) {
     if ($result_cliente->num_rows == 1) {
         $row_cliente = $result_cliente->fetch_assoc();
         $nome_cliente = $row_cliente['nome_cliente'];
-        $email = $row_cliente['email'];
         $cpf = $row_cliente['cpf'];
+        $data_cadastro = $row_cliente['data_cadastro'];
         $cidade = $row_cliente['cidade'];
-        $usuario_responsavel = $row_cliente['usuario_responsavel'];
-        $email = $row_cliente['email'];
+        $responsavel = $row_cliente['responsavel'];
         $celular = $row_cliente['celular'];
         $telefone = $row_cliente['telefone'];
     } else {
@@ -84,11 +83,12 @@ if (isset($_GET['id'])) {
                     <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Usuario Responsavel
                         :</span>
                     <span class="tbold">
-                        <?php echo $usuario_responsavel; ?>
+                        <?php echo $responsavel; ?>
                     </span><br>
-                    <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Email :</span>
+                    <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Data Cadastro
+                        :</span>
                     <span class="tbold">
-                        <?php echo $email; ?>
+                        <?php echo date('d/m/Y', strtotime($data_cadastro)); ?>
                     </span><br>
                     <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Celular :</span>
                     <span class="tbold">
@@ -112,11 +112,7 @@ if (isset($_GET['id'])) {
                 <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">CPF/CNPJ :</span>
                 <span class="tbold">
                     <?php
-                    $cpf;
-                    $formatted_cpf = substr_replace($cpf, '.', 3, 0);
-                    $formatted_cpf = substr_replace($formatted_cpf, '.', 7, 0);
-                    $formatted_cpf = substr_replace($formatted_cpf, '-', 11, 0);
-                    echo $formatted_cpf;
+                    echo $cpf;
                     ?>
                 </span><br>
                 <span id="user-inf" style="font-family: Arial, sans-serif; font-weight: bold;">Cidade :</span>
@@ -192,9 +188,9 @@ if (isset($_GET['id'])) {
                     $od = $row_vendas['od'];
                     $valor = $row_vendas['valor'];
                     $medico = $row_vendas['medico'];
-                    $obs = $row_vendas['obs'];
+                    $obs = $row_vendas['observacao'];
                     $data_compra = $row_vendas['data_compra'];
-                    $responsavel = $row_vendas['usuario_responsavel'];
+                    $responsavel = $row_vendas['responsavel'];
 
                     echo "<tr>";
                     echo "<td><a href=\"/Informação/id_protocolo.php?id=$cliente_id&ic=$id_compra\">$id_compra</a></td>";
