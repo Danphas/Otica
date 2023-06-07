@@ -1,20 +1,13 @@
 # Projeto
 
-Projeto feito para gerenciamento de usuarios e compras
+Aplicação para cadastro e controle de clientes e vendas
 
-cadastrando, adicionando, atualizando os dados no bd local
+Aplicação feita para controle de uma otica
 
-# Updates
+# Funções
 
-v1 
-update da tela de login
+A Aplicação tem um controle de cadastro de novos clientes
 
-update das cores da aplicação
+Uma pagina para consulta geral de uma data e verificar as compras nessa data
 
-update na tela de cadastro e no codigo para cadastro
-
-
-# Proximos Updates
-Arrumar a pesquisa de dados na tela Index, Cliente
-
-Reformular as telas de Nova Compra, Cliente, Consultar, Edição das informações(venda e cadastro), Buscar Cliente
+Controle de exclusão e atualização do cadastro e das vendas.
