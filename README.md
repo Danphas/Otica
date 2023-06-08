@@ -16,7 +16,7 @@
 
 ## 💻 Projeto
 
-O projeto é um sistema de cadastro de clientes e consulta dos mesmos, desenvolvido para a [Ótica Científica](https://www.instagram.com/oticacientifica_oficial/?hl=pt) localizada na cidade de Pouso Alegre - MG.
+O projeto é um sistema de cadastro de clientes, juntamente com as suas compras e consulta dos mesmos, desenvolvido para a [Ótica Científica](https://www.instagram.com/oticacientifica_oficial/?hl=pt) localizada na cidade de Pouso Alegre - MG.
 
 <br>
 
