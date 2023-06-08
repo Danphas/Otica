@@ -80,7 +80,7 @@ function obterUltimoIDGeral($mysqli)
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -217,10 +217,8 @@ function obterUltimoIDGeral($mysqli)
                                     <div class="c-left">
                                         <label for="adicao">Adição</label>
                                         <div class="adicao-inputs">
-                                            <input type="number" id="adicao_oe" name="adicao_oe" step="0.05"
-                                                placeholder="0.00">
-                                            <input type="number" id="adicao_od" name="adicao_od" step="0.05"
-                                                placeholder="0.00">
+                                            <input type="number" id="adicao_oe" name="adicao_oe" step="0.05" placeholder="0.00">
+                                            <input type="number" id="adicao_od" name="adicao_od" step="0.05" placeholder="0.00">
                                         </div>
 
                                         <label for="lente">Lente (LT)</label>
@@ -249,8 +247,7 @@ function obterUltimoIDGeral($mysqli)
                                         border-radius: 10px;"></input>
 
                                         <label for="valor">Valor</label>
-                                        <input type="number" id="valor" name="valor" step="1" min="0" placeholder="0.00"
-                                            style="width: 170px;
+                                        <input type="number" id="valor" name="valor" step="1" min="0" placeholder="0.00" style="width: 170px;
                                         padding: 8px 12px;
                                         margin-bottom: 10px;
                                         border: 1px solid rgba(0, 0, 0, 0.15);

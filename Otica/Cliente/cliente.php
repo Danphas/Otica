@@ -44,7 +44,7 @@ if (isset($_GET['id'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -80,42 +80,42 @@ if (isset($_GET['id'])) {
         <div class="box-client">
             <div id="direita">
                 <span style="float: right; margin: 5px;">
-                    <span id="user-inf" >Usuario Responsavel
+                    <span id="user-inf">Usuario Responsavel
                         :</span>
                     <span class="tbold">
                         <?php echo $responsavel; ?>
                     </span><br>
-                    <span id="user-inf" >Data Cadastro
+                    <span id="user-inf">Data Cadastro
                         :</span>
                     <span class="tbold">
                         <?php echo date('d/m/Y', strtotime($data_cadastro)); ?>
                     </span><br>
-                    <span id="user-inf" >Celular :</span>
+                    <span id="user-inf">Celular :</span>
                     <span class="tbold">
                         <?php echo $celular; ?>
                     </span><br>
-                    <span id="user-inf" >Telefone :</span>
+                    <span id="user-inf">Telefone :</span>
                     <span class="tbold">
                         <?php echo $telefone; ?>
                     </span><br>
                 </span>
             </div>
             <div id="esquerda" style="margin: 5px;">
-                <span id="user-inf" >Cliente ID :</span>
+                <span id="user-inf">Cliente ID :</span>
                 <span class="tbold">
                     <?php echo $cliente_id; ?>
                 </span><br>
-                <span id="user-inf" >Nome Cliente :</span>
+                <span id="user-inf">Nome Cliente :</span>
                 <span class="tbold">
                     <?php echo $nome_cliente; ?>
                 </span><br>
-                <span id="user-inf" >CPF/CNPJ :</span>
+                <span id="user-inf">CPF/CNPJ :</span>
                 <span class="tbold">
                     <?php
                     echo $cpf;
                     ?>
                 </span><br>
-                <span id="user-inf" >Cidade :</span>
+                <span id="user-inf">Cidade :</span>
                 <span class="tbold">
                     <?php echo $cidade; ?>
                 </span><br>
@@ -128,85 +128,83 @@ if (isset($_GET['id'])) {
     <div class="table-client">
         <div class="d-table">
             <div class="b-compra">
-                <button><a
-                        href="/Nova_Compra/new_compra.php?id=<?php echo $cliente_id; ?>&ic=<?php echo $next_id_compra; ?>"
-                        style="text-decoration: none; color: white;">Nova Compra</a></button>
+                <button><a href="/Nova_Compra/new_compra.php?id=<?php echo $cliente_id; ?>&ic=<?php echo $next_id_compra; ?>" style="text-decoration: none; color: white;">Nova Compra</a></button>
             </div>
         </div>
 
         <div class="activity">
-        <table class="table-orders">
-            <thead>
-                <tr>
-                    <th>
-                        <div>
-                            <span>ID Compra</span>
-                        </div>
-                    </th>
-                    <th>
-                        <div>
-                            <span>OE</span>
-                        </div>
-                    </th>
-                    <th>
-                        <div>
-                            <span>OD</span>
-                        </div>
-                    </th>
-                    <th>
-                        <div>
-                            <span>Valor</span>
-                        </div>
-                    </th>
-                    <th>
-                        <div>
-                            <span>Medico</span>
-                        </div>
-                    </th>
-                    <th>
-                        <div>
-                            <span>Observações</span>
-                        </div>
-                    </th>
-                    <th>
-                        <div>
-                            <span>Data Compra</span>
-                        </div>
-                    </th>
-                    <th>
-                        <div>
-                            <span>Responsavel</span>
-                        </div>
-                    </th>
-                </tr>
-            </thead>
+            <table class="table-orders">
+                <thead>
+                    <tr>
+                        <th>
+                            <div>
+                                <span>ID Compra</span>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <span>OE</span>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <span>OD</span>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <span>Valor</span>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <span>Medico</span>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <span>Observações</span>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <span>Data Compra</span>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <span>Responsavel</span>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
 
-            <tbody>
-                <?php
-                while ($row_vendas = $result_vendas->fetch_assoc()) {
-                    $id_compra = $row_vendas['id_compra'];
-                    $oe = $row_vendas['oe'];
-                    $od = $row_vendas['od'];
-                    $valor = $row_vendas['valor'];
-                    $medico = $row_vendas['medico'];
-                    $obs = $row_vendas['observacao'];
-                    $data_compra = $row_vendas['data_compra'];
-                    $responsavel = $row_vendas['responsavel'];
+                <tbody>
+                    <?php
+                    while ($row_vendas = $result_vendas->fetch_assoc()) {
+                        $id_compra = $row_vendas['id_compra'];
+                        $oe = $row_vendas['oe'];
+                        $od = $row_vendas['od'];
+                        $valor = $row_vendas['valor'];
+                        $medico = $row_vendas['medico'];
+                        $obs = $row_vendas['observacao'];
+                        $data_compra = $row_vendas['data_compra'];
+                        $responsavel = $row_vendas['responsavel'];
 
-                    echo "<tr>";
-                    echo "<td><a href=\"/Informação/id_protocolo.php?id=$cliente_id&ic=$id_compra\">$id_compra</a></td>";
-                    echo "<td>$oe</td>";
-                    echo "<td>$od</td>";
-                    echo "<td>R$ $valor</td>";
-                    echo "<td>$medico</td>";
-                    echo "<td>$obs</td>";
-                    echo "<td><a href='/Informação/id_protocolo.php?id=" . $cliente_id . "&ic=" . $id_compra . "'>" . date("d/m/Y", strtotime($data_compra)) . "</a></td>";
-                    echo "<td>$responsavel</td>";
-                    echo "</tr>";
-                }
-                ?>
-            </tbody>
-        </table>
+                        echo "<tr>";
+                        echo "<td><a href=\"/Informação/id_protocolo.php?id=$cliente_id&ic=$id_compra\">$id_compra</a></td>";
+                        echo "<td>$oe</td>";
+                        echo "<td>$od</td>";
+                        echo "<td>R$ $valor</td>";
+                        echo "<td>$medico</td>";
+                        echo "<td>$obs</td>";
+                        echo "<td><a href='/Informação/id_protocolo.php?id=" . $cliente_id . "&ic=" . $id_compra . "'>" . date("d/m/Y", strtotime($data_compra)) . "</a></td>";
+                        echo "<td>$responsavel</td>";
+                        echo "</tr>";
+                    }
+                    ?>
+                </tbody>
+            </table>
         </div>
     </div>
 </body>

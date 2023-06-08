@@ -53,7 +53,7 @@ ul li:nth-child(2) a {
 
 .user {
   color: white;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: medium;
 }
 
@@ -124,7 +124,7 @@ ul li:nth-child(2) a {
 }
 
 #table-activity th {
-  font-family: "Anek Malayalam";
+  font-family: 'Anek Malayalam';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;

@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -95,8 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="left-column">
                   <div class="l-left">
                     <label for="nome_cliente">Nome</label>
-                    <input type="text" id="nome_cliente" name="nome_cliente" value="<?php echo $nome_cliente; ?>"
-                      required>
+                    <input type="text" id="nome_cliente" name="nome_cliente" value="<?php echo $nome_cliente; ?>" required>
 
                     <label for="telefone">Telefone</label>
                     <input type="text" id="telefone" name="telefone" value="<?php echo $telefone; ?>">
@@ -112,8 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="text" id="cidade" name="cidade" value="<?php echo $cidade; ?>">
 
                     <label for="data_nascimento">Data de Nascimento</label>
-                    <input type="date" id="data_nascimento" name="data_nascimento"
-                      value="<?php echo $data_nascimento; ?>">
+                    <input type="date" id="data_nascimento" name="data_nascimento" value="<?php echo $data_nascimento; ?>">
                   </div>
                 </div>
               </div>
