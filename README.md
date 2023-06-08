@@ -1,4 +1,4 @@
-<h1 align="center"> Sistema de cadastro Ótica Científica </h1>
+<h1 align="center"> Sistema de cadastro para Ótica </h1>
 
 <p align="center">
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
