@@ -251,10 +251,10 @@ if (isset($_POST['outras_submit'])) {
                                         <label for="responsavel">Responsável</label>
                                         <select id="responsavel" name="responsavel" class="custom-select">
                                             <option value="#"> </option>
-                                            <option value="Daniel" <?php if ($responsavel == "Daniel")
-                                                                        echo "selected"; ?>>Daniel</option>
-                                            <option value="Juan" <?php if ($responsavel == "Juan")
-                                                                        echo "selected"; ?>>Juan</option>
+                                            <option value="Edilene" <?php if ($responsavel == "Edilene")
+                                                                        echo "selected"; ?>>Edilene</option>
+                                            <option value="Aline" <?php if ($responsavel == "Aline")
+                                                                        echo "selected"; ?>>Aline</option>
                                         </select>
                                     </div>
                                     <div>

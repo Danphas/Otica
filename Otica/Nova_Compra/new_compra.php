@@ -231,8 +231,8 @@ function obterUltimoIDGeral($mysqli)
                                         <label for="responsavel">Responsável</label>
                                         <select id="responsavel" name="responsavel" class="custom-select">
                                             <option value="#"> </option>
-                                            <option value="Daniel">Daniel</option>
-                                            <option value="Juan">Juan</option>
+                                            <option value="Edilene">Edilene</option>
+                                            <option value="Aline">Aline</option>
                                         </select>
                                     </div>
                                     <div>
