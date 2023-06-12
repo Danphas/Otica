@@ -95,6 +95,16 @@ if (isset($_POST['outras_submit'])) {
         echo "Erro ao atualizar os dados: " . $mysqli->error;
     }
 }
+
+if (isset($_POST['delete_submit'])) {
+    $sql_delete = "DELETE FROM vendas WHERE id_cliente = '$id_cliente' AND id_compra = '$id_compra'";
+    if ($mysqli->query($sql_delete)) {
+        header("Location: /Cliente/cliente.php?id=" . $cliente_id);
+        exit();
+    } else {
+        echo "Erro ao apagar os dados: " . $mysqli->error;
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -106,7 +116,7 @@ if (isset($_POST['outras_submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="\Img\favicon.ico" type="image/x-icon">
-    <title>Nova Compra</title>
+    <title>Compra</title>
 </head>
 
 <body>
@@ -190,7 +200,7 @@ if (isset($_POST['outras_submit'])) {
                                 <button type="submit" name="outras_submit" value="Enviar">Enviar</button>
                             </div>
                             <div id="cancel">
-                                <a href="/Index/index.php"><button type="button">Apagar</button></a>
+                                <button type="submit" name="delete_submit" value="Apagar">Apagar</button>
                             </div>
 
                         </div>
@@ -262,7 +272,8 @@ if (isset($_POST['outras_submit'])) {
                                             <option value="Edilene" <?php if ($responsavel == "Edilene")
                                                 echo "selected"; ?>>Edilene</option>
                                             <option value="Aline" <?php if ($responsavel == "Aline")
-                                                echo "selected"; ?>>Aline</option>
+                                                echo "selected"; ?>>
+                                                Aline</option>
                                         </select>
                                     </div>
                                     <div>
@@ -272,7 +283,8 @@ if (isset($_POST['outras_submit'])) {
                                             value="<?php echo $nr_pedido; ?>"></input>
 
                                         <label for="valor">Valor</label>
-                                        <input type="number" id="valor" name="valor" step="0.01" min="0" placeholder="0.00"
+                                        <input type="number" id="valor" name="valor" step="0.01" min="0"
+                                            placeholder="0.00"
                                             style="width: 170px; padding: 8px 12px; margin-bottom: 10px; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 4px; box-sizing: border-box; box-shadow: 0px 0px 6px 2px #da60dd; border-radius: 10px;"
                                             value="<?php echo $valor; ?>" />
                                     </div>

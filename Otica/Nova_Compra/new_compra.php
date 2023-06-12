@@ -247,7 +247,7 @@ function obterUltimoIDGeral($mysqli)
                                         border-radius: 10px;"></input>
 
                                         <label for="valor">Valor</label>
-                                        <input type="number" id="valor" name="valor" step="1" min="0" placeholder="0.00" style="width: 170px;
+                                        <input type="number" id="valor" name="valor" step="0.01" min="0" placeholder="0.00" style="width: 170px;
                                         padding: 8px 12px;
                                         margin-bottom: 10px;
                                         border: 1px solid rgba(0, 0, 0, 0.15);
