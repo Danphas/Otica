@@ -15,8 +15,8 @@ if ($mysqli->connect_errno) {
 $id_cliente = isset($_GET['id']) ? $_GET['id'] : '';
 $id_compra = isset($_GET['ic']) ? $_GET['ic'] : '';
 
-if (isset($_GET['ic'])) {
-    $sql_venda = "SELECT * FROM vendas WHERE id_compra = '$id_compra'";
+if (isset($_GET['id']) && isset($_GET['ic'])) {
+    $sql_venda = "SELECT * FROM vendas WHERE id_cliente = '$id_cliente' AND id_compra = '$id_compra'";
     $result_venda = $mysqli->query($sql_venda);
 
     if ($result_venda->num_rows == 1) {
@@ -42,6 +42,9 @@ if (isset($_GET['ic'])) {
         echo "Venda não encontrada.";
         exit();
     }
+} else {
+    echo "ID do cliente e ID da compra não fornecidos.";
+    exit();
 }
 
 if (isset($_GET['id'])) {
@@ -205,7 +208,8 @@ if (isset($_POST['outras_submit'])) {
                                 <div class="right-column">
                                     <div class="r-left">
                                         <label for="data_consulta">Data da Consulta</label>
-                                        <input type="date" id="data_consulta" name="data_consulta" value="<?php echo $data_consulta; ?>">
+                                        <input type="date" id="data_consulta" name="data_consulta"
+                                            value="<?php echo $data_consulta; ?>">
 
                                         <label for="oe">OE</label>
                                         <input type="text" id="oe" name="oe" value="<?php echo $oe; ?>">
@@ -214,7 +218,8 @@ if (isset($_POST['outras_submit'])) {
                                         <input type="text" id="dnp_oe" name="dnp_oe" value="<?php echo $dnp_oe; ?>">
 
                                         <label for="altura_oe">Altura OE</label>
-                                        <input type="text" id="altura_oe" name="altura_oe" value="<?php echo $altura_oe; ?>">
+                                        <input type="text" id="altura_oe" name="altura_oe"
+                                            value="<?php echo $altura_oe; ?>">
                                     </div>
                                     <div class="r-right">
                                         <label for="medico">Médico</label>
@@ -227,7 +232,8 @@ if (isset($_POST['outras_submit'])) {
                                         <input type="text" id="dnp_od" name="dnp_od" value="<?php echo $dnp_od; ?>">
 
                                         <label for="altura_od">Altura OD</label>
-                                        <input type="text" id="altura_od" name="altura_od" value="<?php echo $altura_od; ?>">
+                                        <input type="text" id="altura_od" name="altura_od"
+                                            value="<?php echo $altura_od; ?>">
                                     </div>
                                 </div>
                             </div>
@@ -237,8 +243,10 @@ if (isset($_POST['outras_submit'])) {
                                     <div class="c-left">
                                         <label for="adicao">Adição</label>
                                         <div class="adicao-inputs">
-                                            <input type="number" id="adicao_oe" name="adicao_oe" step="0.05" placeholder="0.00" value="<?php echo $adicao_oe; ?>">
-                                            <input type="number" id="adicao_od" name="adicao_od" step="0.05" placeholder="0.00" value="<?php echo $adicao_od; ?>">
+                                            <input type="number" id="adicao_oe" name="adicao_oe" step="0.05"
+                                                placeholder="0.00" value="<?php echo $adicao_oe; ?>">
+                                            <input type="number" id="adicao_od" name="adicao_od" step="0.05"
+                                                placeholder="0.00" value="<?php echo $adicao_od; ?>">
                                         </div>
 
                                         <label for="lente">Lente (LT)</label>
@@ -252,17 +260,21 @@ if (isset($_POST['outras_submit'])) {
                                         <select id="responsavel" name="responsavel" class="custom-select">
                                             <option value="#"> </option>
                                             <option value="Edilene" <?php if ($responsavel == "Edilene")
-                                                                        echo "selected"; ?>>Edilene</option>
+                                                echo "selected"; ?>>Edilene</option>
                                             <option value="Aline" <?php if ($responsavel == "Aline")
-                                                                        echo "selected"; ?>>Aline</option>
+                                                echo "selected"; ?>>Aline</option>
                                         </select>
                                     </div>
                                     <div>
                                         <label for="nr_pedido">NR Pedido</label>
-                                        <input id="nr_pedido" name="nr_pedido" style="width: 170px; padding: 8px 12px; margin-bottom: 10px; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 4px; box-sizing: border-box; box-shadow: 0px 0px 6px 2px #da60dd; border-radius: 10px;" value="<?php echo $nr_pedido; ?>"></input>
+                                        <input id="nr_pedido" name="nr_pedido"
+                                            style="width: 170px; padding: 8px 12px; margin-bottom: 10px; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 4px; box-sizing: border-box; box-shadow: 0px 0px 6px 2px #da60dd; border-radius: 10px;"
+                                            value="<?php echo $nr_pedido; ?>"></input>
 
                                         <label for="valor">Valor</label>
-                                        <input type="number" id="valor" name="valor" step="1" min="0" placeholder="0.00" style="width: 170px; padding: 8px 12px; margin-bottom: 10px; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 4px; box-sizing: border-box; box-shadow: 0px 0px 6px 2px #da60dd; border-radius: 10px;" value="<?php echo $valor; ?>" />
+                                        <input type="number" id="valor" name="valor" step="0.01" min="0" placeholder="0.00"
+                                            style="width: 170px; padding: 8px 12px; margin-bottom: 10px; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 4px; box-sizing: border-box; box-shadow: 0px 0px 6px 2px #da60dd; border-radius: 10px;"
+                                            value="<?php echo $valor; ?>" />
                                     </div>
                                 </div>
                                 <br>

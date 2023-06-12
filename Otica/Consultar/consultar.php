@@ -89,7 +89,7 @@ if (!empty($dataCompra)) {
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($rows as $row) : ?>
+                <?php foreach ($rows as $row): ?>
                     <tr>
                         <td>
                             <a href="/Cliente/cliente.php?id=<?php echo $row['id_cliente']; ?>">
@@ -102,19 +102,20 @@ if (!empty($dataCompra)) {
                             </a>
                         </td>
                         <td>
-                            <a href="/Informação/id_protocolo.php?id=<?php echo $row['id_cliente']; ?>&ic=<?php echo $row['id_compra']; ?>">
+                            <a
+                                href="/Informação/id_protocolo.php?id=<?php echo $row['id_cliente']; ?>&ic=<?php echo $row['id_compra']; ?>">
                                 <?php echo isset($dataCompra) ? date('d/m/Y', strtotime($dataCompra)) : ''; ?>
                             </a>
                         </td>
                         <td>
-                            <?php echo $row['valor']; ?>
+                            <?php echo "R$ " . $row['valor']; ?>
                         </td>
                         <td>
                             <?php echo $row['responsavel']; ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
-                <?php if (empty($rows)) : ?>
+                <?php if (empty($rows)): ?>
                     <tr>
                         <td colspan="5">Insira a Data Desejada</td>
                     </tr>

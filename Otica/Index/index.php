@@ -110,7 +110,7 @@ if (!$resultado) {
                     echo "<td><a href='/Cliente/cliente.php?id=" . $row['id_cliente'] . "'>" . $row['id_cliente'] . "</a></td>";
                     echo "<td><a href='/Cliente/cliente.php?id=" . $row['id_cliente'] . "'>" . $row['nome_cliente'] . "</a></td>";
                     echo "<td>" . $row['cpf'] . "</td>";
-                    echo "<td>" . $row['valor'] . "</td>";
+                    echo "<td>R$ " . $row['valor'] . "</td>";
                     echo "<td>" . $row['oe'] . "</td>";
                     echo "<td>" . $row['od'] . "</td>";
                     echo "<td>" . $row['cidade'] . "</td>";
