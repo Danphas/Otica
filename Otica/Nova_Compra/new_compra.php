@@ -46,8 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $od = $_POST['od'];
     $dnp_od = $_POST['dnp_od'];
     $altura_od = $_POST['altura_od'];
-    $adicao_oe = $_POST['adicao_oe'];
-    $adicao_od = $_POST['adicao_od'];
+    $adicao = $_POST['adicao'];
     $armacao = $_POST['armacao'];
     $nr_pedido = $_POST['nr_pedido'];
     $lente = $_POST['lente'];
@@ -58,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $id_geral = obterUltimoIDGeral($mysqli);
 
-    $sql_insert = "INSERT INTO vendas (id_cliente, id_compra, id_geral, data_consulta, medico, oe, dnp_oe, altura_oe, od, dnp_od, altura_od, adicao_oe, adicao_od, armacao, nr_pedido, lente, valor, observacao, data_compra, responsavel) VALUES ('$cliente_id', '$id_compra', '$id_geral', '$data_consulta', '$medico', '$oe', '$dnp_oe', '$altura_oe', '$od', '$dnp_od', '$altura_od', '$adicao_oe', '$adicao_od', '$armacao', '$nr_pedido', '$lente', '$valor', '$observacao', '$data_compra', '$responsavel')";
+    $sql_insert = "INSERT INTO vendas (id_cliente, id_compra, id_geral, data_consulta, medico, oe, dnp_oe, altura_oe, od, dnp_od, altura_od, adicao, armacao, nr_pedido, lente, valor, observacao, data_compra, responsavel) VALUES ('$cliente_id', '$id_compra', '$id_geral', '$data_consulta', '$medico', '$oe', '$dnp_oe', '$altura_oe', '$od', '$dnp_od', '$altura_od', '$adicao', '$armacao', '$nr_pedido', '$lente', '$valor', '$observacao', '$data_compra', '$responsavel')";
 
     if ($mysqli->query($sql_insert)) {
         echo "Dados inseridos com sucesso.";
@@ -217,8 +216,7 @@ function obterUltimoIDGeral($mysqli)
                                     <div class="c-left">
                                         <label for="adicao">Adição</label>
                                         <div class="adicao-inputs">
-                                            <input type="number" id="adicao_oe" name="adicao_oe" step="0.05" placeholder="0.00">
-                                            <input type="number" id="adicao_od" name="adicao_od" step="0.05" placeholder="0.00">
+                                            <input type="number" id="adicao" name="adicao" step="0.05" placeholder="0.00">
                                         </div>
 
                                         <label for="lente">Lente (LT)</label>
@@ -229,11 +227,7 @@ function obterUltimoIDGeral($mysqli)
                                         <input type="text" id="armacao" name="armacao">
 
                                         <label for="responsavel">Responsável</label>
-                                        <select id="responsavel" name="responsavel" class="custom-select">
-                                            <option value="#"> </option>
-                                            <option value="Edilene">Edilene</option>
-                                            <option value="Aline">Aline</option>
-                                        </select>
+                                        <input type="text" id="responsavel" name="responsavel">
                                     </div>
                                     <div>
                                         <label for="nr_pedido">NR Pedido</label>

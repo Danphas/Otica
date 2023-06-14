@@ -44,8 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $od = $_POST['od'];
         $dnp_od = $_POST['dnp_od'];
         $altura_od = $_POST['altura_od'];
-        $adicao_oe = $_POST['adicao_oe'];
-        $adicao_od = $_POST['adicao_od'];
+        $adicao = $_POST['adicao'];
         $armacao = $_POST['armacao'];
         $nr_pedido = $_POST['nr_pedido'];
         $lente = $_POST['lente'];
@@ -54,8 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $data_compra = date("Y/m/d", strtotime("now"));
         $responsavel = $_POST['responsavel'];
 
-        $query = "INSERT INTO vendas (id_cliente, id_compra, id_geral, data_consulta, medico, oe, dnp_oe, altura_oe, od, dnp_od, altura_od, adicao_oe, adicao_od, armacao, nr_pedido, lente, valor, observacao, data_compra, responsavel)
-              VALUES ($novoIdCliente, $id_compra, $id_geral, '$data_consulta', '$medico', '$oe', '$dnp_oe', '$altura_oe', '$od', '$dnp_od', '$altura_od', $adicao_oe, $adicao_od, '$armacao', '$nr_pedido', '$lente', $valor, '$observacao', '$data_compra', '$responsavel')";
+        $query = "INSERT INTO vendas (id_cliente, id_compra, id_geral, data_consulta, medico, oe, dnp_oe, altura_oe, od, dnp_od, altura_od, adicao, armacao, nr_pedido, lente, valor, observacao, data_compra, responsavel)
+              VALUES ($novoIdCliente, $id_compra, $id_geral, '$data_consulta', '$medico', '$oe', '$dnp_oe', '$altura_oe', '$od', '$dnp_od', '$altura_od', '$adicao', '$armacao', '$nr_pedido', '$lente', $valor, '$observacao', '$data_compra', '$responsavel')";
         $mysqli->query($query);
 
         if (!$resultado) {
@@ -175,6 +174,24 @@ function obterUltimoIDGeral($mysqli)
                                         <label for="data_consulta">Data da Consulta</label>
                                         <input type="date" id="data_consulta" name="data_consulta">
 
+                                        <label for="od">OD</label>
+                                        <input type="text" id="od" name="od">
+
+                                        <label for="adicao">Adição</label>
+                                        <div class="adicao-inputs">
+                                            <input type="number" id="adicao" name="adicao" step="0.05" placeholder="0.00">
+                                        </div>
+
+                                        <label for="dnp_od">DNP OD</label>
+                                        <input type="text" id="dnp_od" name="dnp_od">
+
+                                        <label for="altura_od">Altura OD</label>
+                                        <input type="text" id="altura_od" name="altura_od">
+                                    </div>
+                                    <div class="r-right">
+                                        <label for="medico">Médico</label>
+                                        <input type="text" id="medico" name="medico">
+
                                         <label for="oe">OE</label>
                                         <input type="text" id="oe" name="oe">
 
@@ -184,33 +201,12 @@ function obterUltimoIDGeral($mysqli)
                                         <label for="altura_oe">Altura OE</label>
                                         <input type="text" id="altura_oe" name="altura_oe">
                                     </div>
-                                    <div class="r-right">
-                                        <label for="medico">Médico</label>
-                                        <input type="text" id="medico" name="medico">
-
-                                        <label for="od">OD</label>
-                                        <input type="text" id="od" name="od">
-
-                                        <label for="dnp_od">DNP OD</label>
-                                        <input type="text" id="dnp_od" name="dnp_od">
-
-                                        <label for="altura_od">Altura OD</label>
-                                        <input type="text" id="altura_od" name="altura_od">
-                                    </div>
                                 </div>
                             </div>
                             <br><br>
                             <div class="form-center">
                                 <div class="center-column">
                                     <div class="c-left">
-                                        <label for="adicao">Adição</label>
-                                        <div class="adicao-inputs">
-                                            <input type="number" id="adicao_oe" name="adicao_oe" step="0.05"
-                                                placeholder="0.00">
-                                            <input type="number" id="adicao_od" name="adicao_od" step="0.05"
-                                                placeholder="0.00">
-                                        </div>
-
                                         <label for="lente">Lente (LT)</label>
                                         <input type="text" id="lente" name="lente">
                                     </div>
@@ -219,11 +215,7 @@ function obterUltimoIDGeral($mysqli)
                                         <input type="text" id="armacao" name="armacao">
 
                                         <label for="responsavel">Responsável</label>
-                                        <select id="responsavel" name="responsavel" class="custom-select">
-                                            <option value="#"> </option>
-                                            <option value="Edilene">Edilene</option>
-                                            <option value="Aline">Aline</option>
-                                        </select>
+                                        <input type="text" id="responsavel" name="responsavel">
                                     </div>
                                     <div>
                                         <label for="nr_pedido">NR Pedido</label>
@@ -237,8 +229,7 @@ function obterUltimoIDGeral($mysqli)
                                         border-radius: 10px;"></input>
 
                                         <label for="valor">Valor</label>
-                                        <input type="number" id="valor" name="valor" step="0.01" placeholder="0.00"
-                                            style="width: 170px;
+                                        <input type="number" id="valor" name="valor" step="0.01" placeholder="0.00" style="width: 170px;
                                             padding: 8px 12px;
                                             margin-bottom: 10px;
                                             border: 1px solid rgba(0, 0, 0, 0.15);
