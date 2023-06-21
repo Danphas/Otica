@@ -178,9 +178,8 @@ function obterUltimoIDGeral($mysqli)
                                         <input type="text" id="od" name="od">
 
                                         <label for="adicao">Adição</label>
-                                        <div class="adicao-inputs">
-                                            <input type="number" id="adicao" name="adicao" step="0.05" placeholder="0.00">
-                                        </div>
+                                        <input type="number" id="adicao" name="adicao" step="0.05" placeholder="0.00">
+
 
                                         <label for="dnp_od">DNP OD</label>
                                         <input type="text" id="dnp_od" name="dnp_od">
