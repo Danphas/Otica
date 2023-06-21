@@ -178,45 +178,27 @@ function obterUltimoIDGeral($mysqli)
                                         <input type="text" id="od" name="od">
 
                                         <label for="adicao">Adição</label>
-                                        <input type="number" id="adicao" name="adicao" step="0.05" placeholder="0.00">
-
+                                        <div class="adicao-inputs">
+                                            <input type="number" id="adicao" name="adicao" step="0.05" placeholder="0.00" style="width: 170px;
+                                            height: 35px;
+                                            border: 1px solid rgba(0, 0, 0, 0.15);
+                                            box-sizing: border-box;
+                                            box-shadow: 0px 0px 6px 2px #da60dd;
+                                            border-radius: 10px;
+                                            margin-bottom: 10px;
+                                            padding: 8px 12px;
+                                            margin-left: 15px;">
+                                        </div>
 
                                         <label for="dnp_od">DNP OD</label>
                                         <input type="text" id="dnp_od" name="dnp_od">
 
                                         <label for="altura_od">Altura OD</label>
                                         <input type="text" id="altura_od" name="altura_od">
-                                    </div>
-                                    <div class="r-right">
-                                        <label for="medico">Médico</label>
-                                        <input type="text" id="medico" name="medico">
 
-                                        <label for="oe">OE</label>
-                                        <input type="text" id="oe" name="oe">
-
-                                        <label for="dnp_oe">DNP OE</label>
-                                        <input type="text" id="dnp_oe" name="dnp_oe">
-
-                                        <label for="altura_oe">Altura OE</label>
-                                        <input type="text" id="altura_oe" name="altura_oe">
-                                    </div>
-                                </div>
-                            </div>
-                            <br><br>
-                            <div class="form-center">
-                                <div class="center-column">
-                                    <div class="c-left">
-                                        <label for="lente">Lente (LT)</label>
-                                        <input type="text" id="lente" name="lente">
-                                    </div>
-                                    <div class="c-right">
                                         <label for="armacao">Armação (AR)</label>
                                         <input type="text" id="armacao" name="armacao">
 
-                                        <label for="responsavel">Responsável</label>
-                                        <input type="text" id="responsavel" name="responsavel" style="margin-left: 15px;">
-                                    </div>
-                                    <div>
                                         <label for="nr_pedido">NR Pedido</label>
                                         <input id="nr_pedido" name="nr_pedido" style="width: 170px;
                                         padding: 8px 12px;
@@ -226,8 +208,28 @@ function obterUltimoIDGeral($mysqli)
                                         box-sizing: border-box;
                                         box-shadow: 0px 0px 6px 2px #da60dd;
                                         border-radius: 10px;"></input>
+                                    </div>
+                                    <div class="r-right">
+                                        <label for="medico">Médico</label>
+                                        <input type="text" id="medico" name="medico">
 
-                                        <label for="valor">Valor</label>
+                                        <label for="oe">OE</label>
+                                        <input type="text" id="oe" name="oe">
+
+                                        <label for="lente">Lente (LT)</label>
+                                        <input type="text" id="lente" name="lente">
+
+                                        <label for="dnp_oe">DNP OE</label>
+                                        <input type="text" id="dnp_oe" name="dnp_oe">
+
+
+                                        <label for="altura_oe">Altura OE</label>
+                                        <input type="text" id="altura_oe" name="altura_oe">
+
+                                        <label for="responsavel">Responsável</label>
+                                        <input type="text" id="responsavel" name="responsavel">
+
+                                        <label for="valor" style="text-align: center;">Valor</label>
                                         <input type="number" id="valor" name="valor" step="0.01" placeholder="0.00" style="width: 170px;
                                             padding: 8px 12px;
                                             margin-bottom: 10px;
@@ -236,6 +238,44 @@ function obterUltimoIDGeral($mysqli)
                                             box-sizing: border-box;
                                             box-shadow: 0px 0px 6px 2px #da60dd;
                                             border-radius: 10px;" />
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="form-center">
+                                <div class="center-column">
+                                    <div class="c-left">
+                                        <!-- <label for="lente">Lente (LT)</label>
+                                        <input type="text" id="lente" name="lente"> -->
+                                        <!-- <label for="armacao">Armação (AR)</label>
+                                        <input type="text" id="armacao" name="armacao"> -->
+                                    </div>
+                                    <div class="c-right">
+
+                                        <!-- <label for="responsavel">Responsável</label>
+                                        <input type="text" id="responsavel" name="responsavel" style="margin-left: 15px;"> -->
+                                    </div>
+                                    <div>
+                                        <!-- <label for="nr_pedido">NR Pedido</label>
+                                        <input id="nr_pedido" name="nr_pedido" style="width: 170px;
+                                        padding: 8px 12px;
+                                        margin-bottom: 10px;
+                                        border: 1px solid rgba(0, 0, 0, 0.15);
+                                        border-radius: 4px;
+                                        box-sizing: border-box;
+                                        box-shadow: 0px 0px 6px 2px #da60dd;
+                                        border-radius: 10px;"></input> -->
+
+                                        <!-- <label for="valor" style="text-align: center;">Valor</label>
+                                        <input type="number" id="valor" name="valor" step="0.01" placeholder="0.00" style="width: 170px;
+                                            padding: 8px 12px;
+                                            margin-bottom: 10px;
+                                            border: 1px solid rgba(0, 0, 0, 0.15);
+                                            border-radius: 4px;
+                                            box-sizing: border-box;
+                                            box-shadow: 0px 0px 6px 2px #da60dd;
+                                            border-radius: 10px;
+                                            margin-left: -15px" /> -->
                                     </div>
                                 </div>
                                 <br>
