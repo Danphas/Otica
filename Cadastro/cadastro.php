@@ -215,7 +215,7 @@ function obterUltimoIDGeral($mysqli)
                                         <input type="text" id="armacao" name="armacao">
 
                                         <label for="responsavel">Responsável</label>
-                                        <input type="text" id="responsavel" name="responsavel">
+                                        <input type="text" id="responsavel" name="responsavel" style="margin-left: 15px;">
                                     </div>
                                     <div>
                                         <label for="nr_pedido">NR Pedido</label>
