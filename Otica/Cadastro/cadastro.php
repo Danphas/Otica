@@ -224,11 +224,11 @@ function obterUltimoIDGeral($mysqli)
                                         <label for="data_consulta">Data da Consulta</label>
                                         <input type="date" id="data_consulta" name="data_consulta">
 
-                                        <label for="armacao">Armação (AR)</label>
-                                        <input type="text" id="armacao" name="armacao">
-
                                         <label for="responsavel">Responsável</label>
                                         <input type="text" id="responsavel" name="responsavel">
+
+                                        <label for="armacao">Armação (AR)</label>
+                                        <input type="text" id="armacao" name="armacao">
 
                                         <label for="valor" style="text-align: center;">Valor</label>
                                         <input type="number" id="valor" name="valor" step="0.01" placeholder="0.00" style="width: 170px;
