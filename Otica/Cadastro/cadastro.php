@@ -177,6 +177,7 @@ function obterUltimoIDGeral($mysqli)
                                         <label for="oe">OE</label>
                                         <input type="text" id="oe" name="oe">
 
+
                                         <label for="altura_od">Altura OD</label>
                                         <input type="text" id="altura_od" name="altura_od">
 
@@ -192,7 +193,6 @@ function obterUltimoIDGeral($mysqli)
                                             padding: 8px 12px;
                                             margin-left: 15px;">
                                         </div>
-
                                         <label for="medico">Médico</label>
                                         <input type="text" id="medico" name="medico">
 
@@ -208,29 +208,30 @@ function obterUltimoIDGeral($mysqli)
 
                                         <label for="lente">Lente (LT)</label>
                                         <input type="text" id="lente" name="lente">
-                                        <!--  -->
 
-                                        <div class="r-right">
-                                            <label for="dnp_od">DNP OD</label>
-                                            <input type="text" id="dnp_od" name="dnp_od">
+                                    </div>
+                                    <div class="r-right">
+                                        <label for="dnp_od">DNP OD</label>
+                                        <input type="text" id="dnp_od" name="dnp_od">
 
-                                            <label for="dnp_oe">DNP OE</label>
-                                            <input type="text" id="dnp_oe" name="dnp_oe">
+                                        <label for="dnp_oe">DNP OE</label>
+                                        <input type="text" id="dnp_oe" name="dnp_oe">
 
-                                            <label for="altura_oe">Altura OE</label>
-                                            <input type="text" id="altura_oe" name="altura_oe">
 
-                                            <label for="data_consulta">Data da Consulta</label>
-                                            <input type="date" id="data_consulta" name="data_consulta">
+                                        <label for="altura_oe">Altura OE</label>
+                                        <input type="text" id="altura_oe" name="altura_oe">
 
-                                            <label for="responsavel">Responsável</label>
-                                            <input type="text" id="responsavel" name="responsavel">
+                                        <label for="data_consulta">Data da Consulta</label>
+                                        <input type="date" id="data_consulta" name="data_consulta">
 
-                                            <label for="armacao">Armação (AR)</label>
-                                            <input type="text" id="armacao" name="armacao">
+                                        <label for="armacao">Armação (AR)</label>
+                                        <input type="text" id="armacao" name="armacao">
 
-                                            <label for="valor" style="text-align: center;">Valor</label>
-                                            <input type="number" id="valor" name="valor" step="0.01" placeholder="0.00" style="width: 170px;
+                                        <label for="responsavel">Responsável</label>
+                                        <input type="text" id="responsavel" name="responsavel">
+
+                                        <label for="valor" style="text-align: center;">Valor</label>
+                                        <input type="number" id="valor" name="valor" step="0.01" placeholder="0.00" style="width: 170px;
                                             padding: 8px 12px;
                                             margin-bottom: 10px;
                                             border: 1px solid rgba(0, 0, 0, 0.15);
@@ -238,27 +239,25 @@ function obterUltimoIDGeral($mysqli)
                                             box-sizing: border-box;
                                             box-shadow: 0px 0px 6px 2px #da60dd;
                                             border-radius: 10px;" />
-                                        </div>
                                     </div>
                                 </div>
-                                <br><br>
-
-                                <!-- -->
-                                <div class="form-center">
-                                    <div class="center-column">
-                                        <div class="c-left">
-                                            <!-- <label for="lente">Lente (LT)</label>
+                            </div>
+                            <br><br>
+                            <div class="form-center">
+                                <div class="center-column">
+                                    <div class="c-left">
+                                        <!-- <label for="lente">Lente (LT)</label>
                                         <input type="text" id="lente" name="lente"> -->
-                                            <!-- <label for="armacao">Armação (AR)</label>
+                                        <!-- <label for="armacao">Armação (AR)</label>
                                         <input type="text" id="armacao" name="armacao"> -->
-                                        </div>
-                                        <div class="c-right">
+                                    </div>
+                                    <div class="c-right">
 
-                                            <!-- <label for="responsavel">Responsável</label>
+                                        <!-- <label for="responsavel">Responsável</label>
                                         <input type="text" id="responsavel" name="responsavel" style="margin-left: 15px;"> -->
-                                        </div>
-                                        <div>
-                                            <!-- <label for="nr_pedido">NR Pedido</label>
+                                    </div>
+                                    <div>
+                                        <!-- <label for="nr_pedido">NR Pedido</label>
                                         <input id="nr_pedido" name="nr_pedido" style="width: 170px;
                                         padding: 8px 12px;
                                         margin-bottom: 10px;
@@ -268,7 +267,7 @@ function obterUltimoIDGeral($mysqli)
                                         box-shadow: 0px 0px 6px 2px #da60dd;
                                         border-radius: 10px;"></input> -->
 
-                                            <!-- <label for="valor" style="text-align: center;">Valor</label>
+                                        <!-- <label for="valor" style="text-align: center;">Valor</label>
                                         <input type="number" id="valor" name="valor" step="0.01" placeholder="0.00" style="width: 170px;
                                             padding: 8px 12px;
                                             margin-bottom: 10px;
@@ -278,15 +277,15 @@ function obterUltimoIDGeral($mysqli)
                                             box-shadow: 0px 0px 6px 2px #da60dd;
                                             border-radius: 10px;
                                             margin-left: -15px" /> -->
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="obs">
-                                        <label for="observacao">Observação</label>
-                                        <textarea id="observacao" name="observacao"></textarea>
                                     </div>
                                 </div>
+                                <br>
+                                <div class="obs">
+                                    <label for="observacao">Observação</label>
+                                    <textarea id="observacao" name="observacao"></textarea>
+                                </div>
                             </div>
+                        </div>
                     </form>
                 </div>
             </div>

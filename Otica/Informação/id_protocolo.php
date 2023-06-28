@@ -215,32 +215,37 @@ if (isset($_POST['delete_submit'])) {
                                 </header>
                                 <div class="right-column">
                                     <div class="r-left">
-                                        <label for="data_consulta">Data da Consulta</label>
-                                        <input type="date" id="data_consulta" name="data_consulta" value="<?php echo $data_consulta; ?>">
-
-
                                         <label for="od">OD</label>
                                         <input type="text" id="od" name="od" value="<?php echo $od; ?>">
 
-                                        <label for="dnp_od">DNP OD</label>
-                                        <input type="text" id="dnp_od" name="dnp_od" value="<?php echo $dnp_od; ?>">
+                                        <label for="oe">OE</label>
+                                        <input type="text" id="oe" name="oe" value="<?php echo $oe; ?>">
 
                                         <label for="altura_od">Altura OD</label>
                                         <input type="text" id="altura_od" name="altura_od" value="<?php echo $altura_od; ?>">
 
-                                    </div>
-                                    <div class="r-right">
                                         <label for="medico">Médico</label>
                                         <input type="text" id="medico" name="medico" value="<?php echo $medico; ?>">
 
-                                        <label for="oe">OE</label>
-                                        <input type="text" id="oe" name="oe" value="<?php echo $oe; ?>">
+                                    </div>
+                                    <div class="r-right">
+
+
+                                        <label for="dnp_od">DNP OD</label>
+                                        <input type="text" id="dnp_od" name="dnp_od" value="<?php echo $dnp_od; ?>">
 
                                         <label for="dnp_oe">DNP OE</label>
                                         <input type="text" id="dnp_oe" name="dnp_oe" value="<?php echo $dnp_oe; ?>">
 
                                         <label for="altura_oe">Altura OE</label>
                                         <input type="text" id="altura_oe" name="altura_oe" value="<?php echo $altura_oe; ?>">
+
+                                        <label for="data_consulta">Data da Consulta</label>
+                                        <input type="date" id="data_consulta" name="data_consulta" value="<?php echo $data_consulta; ?>">
+
+
+
+
 
                                     </div>
                                 </div>
