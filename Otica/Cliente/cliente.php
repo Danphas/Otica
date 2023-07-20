@@ -143,12 +143,12 @@ if (isset($_GET['id'])) {
                         </th>
                         <th>
                             <div>
-                                <span>OE</span>
+                                <span>OD</span>
                             </div>
                         </th>
                         <th>
                             <div>
-                                <span>OD</span>
+                                <span>OE</span>
                             </div>
                         </th>
                         <th>
@@ -183,8 +183,8 @@ if (isset($_GET['id'])) {
                     <?php
                     while ($row_vendas = $result_vendas->fetch_assoc()) {
                         $id_compra = $row_vendas['id_compra'];
-                        $oe = $row_vendas['oe'];
                         $od = $row_vendas['od'];
+                        $oe = $row_vendas['oe'];
                         $valor = $row_vendas['valor'];
                         $medico = $row_vendas['medico'];
                         $obs = $row_vendas['observacao'];
@@ -193,8 +193,8 @@ if (isset($_GET['id'])) {
 
                         echo "<tr>";
                         echo "<td><a href=\"/Informação/id_protocolo.php?id=$cliente_id&ic=$id_compra\">$id_compra</a></td>";
-                        echo "<td>$oe</td>";
                         echo "<td>$od</td>";
+                        echo "<td>$oe</td>";
                         echo "<td>R$ $valor</td>";
                         echo "<td>$medico</td>";
                         echo "<td>$obs</td>";
