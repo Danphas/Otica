@@ -291,5 +291,4 @@ function obterUltimoIDGeral($mysqli)
             </div>
     </section>
 </body>
-
 </html>
