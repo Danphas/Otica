@@ -172,10 +172,10 @@ function obterUltimoIDGeral($mysqli)
                                 <div class="right-column">
                                     <div class="r-left">
                                         <label for="od">OD</label>
-                                        <input type="text" id="od" name="od">
+                                        <input class="input" type="text" id="od" name="od">
 
                                         <label for="oe">OE</label>
-                                        <input type="text" id="oe" name="oe">
+                                        <input class="input" type="text" id="oe" name="oe">
 
 
                                         <label for="altura_od">Altura OD</label>

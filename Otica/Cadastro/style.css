@@ -58,7 +58,7 @@ ul li:nth-child(2) a {
 
 .user {
   color: white;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: medium;
 }
 
@@ -69,7 +69,7 @@ ul li:nth-child(2) a {
 }
 
 .b-cadcan button {
-  font-family: 'Arya';
+  font-family: "Arya";
   font-style: normal;
   font-size: 18px;
   color: white;
@@ -148,15 +148,25 @@ ul li:nth-child(2) a {
   background: #ffffff;
 }
 
+.input {
+  width: calc(
+    33.33% - 10px
+  ); /* Subtrai 10px para acomodar margens entre os inputs */
+  margin-right: 10px;
+}
+
 .left,
 .right {
-  width: 450px;
+  width: 100%; /* Para ocupar todo o espaço disponível */
+  /* ... outros estilos ... */
+
+  /* width: 450px;
   padding: 10px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 .form-center {
@@ -180,7 +190,7 @@ form {
 }
 
 .container label {
-  font-family: 'Arsenal', sans-serif;
+  font-family: "Arsenal", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -190,7 +200,7 @@ form {
 }
 
 .container header {
-  font-family: 'Artifika', serif;
+  font-family: "Artifika", serif;
   font-style: normal;
   font-weight: 400;
   font-size: 30px;
@@ -200,8 +210,8 @@ form {
   margin-bottom: 20px;
 }
 
-.container input[type='text'],
-.container input[type='date'],
+.container input[type="text"],
+.container input[type="date"],
 .container select {
   width: 170px;
   padding: 8px 12px;
@@ -218,7 +228,7 @@ form {
 
 .obs label {
   display: block;
-  font-family: 'Arsenal', sans-serif;
+  font-family: "Arsenal", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -255,8 +265,8 @@ form {
   gap: 10px;
 }
 
-.container input[type='text']:focus,
-.container input[type='date']:focus,
+.container input[type="text"]:focus,
+.container input[type="date"]:focus,
 .container select:focus,
 .container textarea:focus {
   outline: none;
