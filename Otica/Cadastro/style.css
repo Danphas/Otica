@@ -157,16 +157,13 @@ ul li:nth-child(2) a {
 
 .left,
 .right {
-  width: 100%; /* Para ocupar todo o espaço disponível */
-  /* ... outros estilos ... */
-
-  /* width: 450px;
+  width: 450px;
   padding: 10px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
 }
 
 .form-center {
