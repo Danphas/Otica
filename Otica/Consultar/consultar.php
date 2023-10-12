@@ -43,7 +43,7 @@ if (!empty($dataCompra)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="\Img\favicon.ico" type="image/x-icon">
-    <title>Consultar (POR DATA)</title>
+    <title>Consultar (DATA)</title>
 </head>
 
 <body>
