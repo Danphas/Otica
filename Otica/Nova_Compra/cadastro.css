@@ -103,29 +103,6 @@ form .button input:hover{
   background: linear-gradient(-135deg, #71b7e6, #9b59b6);
 }
 
-form a .button {
-  height: 45px;
-  margin: 45px 0;
-}
-
-
-form a .button input {
-  height: 100%;
-  width: 100%;
-  color: #fff;
-
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
-}
-
-form a .button input:hover{
-  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
-}
-
 @media (max-wdith: 584px) {
   .container {
     max-width: 100%;

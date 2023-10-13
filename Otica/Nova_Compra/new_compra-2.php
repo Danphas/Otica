@@ -177,10 +177,11 @@ function obterUltimoIDGeral($mysqli)
         <input type="submit" value="Cadastrar">
       </div>
 
-    <a href="/Index/index.php" class="button">
-            <button class="button" type="button">Cancelar</button>
-    </a>
-
+      <div class="button">
+        <a href="/Index/index.php">
+          <button class="button" type="button">Cancelar</button>
+        </a>
+      </div>
 
     </form>
 
