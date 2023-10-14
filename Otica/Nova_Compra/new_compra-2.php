@@ -178,8 +178,8 @@ function obterUltimoIDGeral($mysqli)
       </div>
 
       <div class="button">
-        <a href="/Index/index.php">
-          <button class="button" type="button">Cancelar</button>
+        <a href="/Index/index.php" class="button">
+            <input type="button" value="Cancelar" style="margin-top: 10px">
         </a>
       </div>
 
