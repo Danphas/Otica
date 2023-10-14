@@ -33,29 +33,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               VALUES ('$novoIdCliente', '$nome_cliente', '$cpf', '$cidade', '$telefone', '$celular', '$data_nascimento', '$data_cadastro', '$responsavelLogin')";
         $mysqli->query($query);
 
-        $id_cliente = $mysqli->insert_id;
-        $id_compra = obterUltimoIDVendas($mysqli, $id_cliente);
-        $id_geral = obterUltimoIDGeral($mysqli);
-        $data_consulta = $_POST['data_consulta'];
-        $medico = $_POST['medico'];
-        $oe = $_POST['oe'];
-        $dnp_oe = $_POST['dnp_oe'];
-        $altura_oe = $_POST['altura_oe'];
-        $od = $_POST['od'];
-        $dnp_od = $_POST['dnp_od'];
-        $altura_od = $_POST['altura_od'];
-        $adicao = $_POST['adicao'];
-        $armacao = $_POST['armacao'];
-        $nr_pedido = $_POST['nr_pedido'];
-        $lente = $_POST['lente'];
-        $valor = $_POST['valor'];
-        $observacao = $_POST['observacao'];
-        $data_compra = date("Y/m/d", strtotime("now"));
-        $responsavel = $_POST['responsavel'];
+        // $id_cliente = $mysqli->insert_id;
+        // $id_compra = obterUltimoIDVendas($mysqli, $id_cliente);
+        // $id_geral = obterUltimoIDGeral($mysqli);
+        // $data_consulta = $_POST['data_consulta'];
+        // $medico = $_POST['medico'];
+        // $oe = $_POST['oe'];
+        // $dnp_oe = $_POST['dnp_oe'];
+        // $altura_oe = $_POST['altura_oe'];
+        // $od = $_POST['od'];
+        // $dnp_od = $_POST['dnp_od'];
+        // $altura_od = $_POST['altura_od'];
+        // $adicao = $_POST['adicao'];
+        // $armacao = $_POST['armacao'];
+        // $nr_pedido = $_POST['nr_pedido'];
+        // $lente = $_POST['lente'];
+        // $valor = $_POST['valor'];
+        // $observacao = $_POST['observacao'];
+        // $data_compra = date("Y/m/d", strtotime("now"));
+        // $responsavel = $_POST['responsavel'];
 
-        $query = "INSERT INTO vendas (id_cliente, id_compra, id_geral, data_consulta, medico, oe, dnp_oe, altura_oe, od, dnp_od, altura_od, adicao, armacao, nr_pedido, lente, valor, observacao, data_compra, responsavel)
-              VALUES ($novoIdCliente, $id_compra, $id_geral, '$data_consulta', '$medico', '$oe', '$dnp_oe', '$altura_oe', '$od', '$dnp_od', '$altura_od', '$adicao', '$armacao', '$nr_pedido', '$lente', $valor, '$observacao', '$data_compra', '$responsavel')";
-        $mysqli->query($query);
+        // $query = "INSERT INTO vendas (id_cliente, id_compra, id_geral, data_consulta, medico, oe, dnp_oe, altura_oe, od, dnp_od, altura_od, adicao, armacao, nr_pedido, lente, valor, observacao, data_compra, responsavel)
+        //       VALUES ($novoIdCliente, $id_compra, $id_geral, '$data_consulta', '$medico', '$oe', '$dnp_oe', '$altura_oe', '$od', '$dnp_od', '$altura_od', '$adicao', '$armacao', '$nr_pedido', '$lente', $valor, '$observacao', '$data_compra', '$responsavel')";
+        // $mysqli->query($query);
 
         if (!$resultado) {
             echo "Erro na consulta: " . $mysqli->error;
@@ -98,14 +98,15 @@ function obterUltimoIDGeral($mysqli)
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="cadastro.css">
     <link rel="icon" href="\Img\favicon.ico" type="image/x-icon">
 
     <title>Cadastro</title>
 </head>
 
 <body>
-    <nav>
+<!-- <nav>
         <a href="/Index/index.php"><img src="/Img/logo.png" alt="logo" class="logo"></a>
         <form action="\buscar_cliente\buscar_cliente.php" method="GET">
             <div class="search-box">
@@ -119,177 +120,60 @@ function obterUltimoIDGeral($mysqli)
                 </span></li>
             <li><a href="logout.php">Sair</a></li>
         </ul>
-    </nav>
-    <br>
+</nav>
+<br> -->
 
-    <section class="cad-user">
-        <div class="container-form center-form">
-            <div class="form">
-                <div class="container">
-                    <form method="POST">
+ <div class="container">
+    <div class="title">Cliente</div>
 
-                        <div class="b-cadcan">
-                            <div id="cad">
-                                <button type="submit" name="outras_submit" value="Enviar">Enviar</button>
-                            </div>
-                            <div id="cancel">
-                                <a href="/Index/index.php"><button type="button">Cancelar</button></a>
-                            </div>
-                        </div>
+    <form method="POST">
+      <div class="user-details">
+        <div class="input-box">
+          <span class="details">Nome Completo</span>
+          <input type="text" id="nome_cliente" name="nome_cliente" placeholder="Nome completo" required>
+        </div>
 
-                        <div class="form-section">
-                            <div class="left">
-                                <header class="left-header">
-                                    <h1>Cliente</h1>
-                                </header>
-                                <div class="left-column">
-                                    <div class="l-left">
-                                        <label for="nome_cliente">Nome</label>
-                                        <input type="text" id="nome_cliente" name="nome_cliente" required>
+        <div class="input-box">
+          <span class="details">CPF</span>
+          <input type="text" placeholder="Digite o CPF">
+        </div>
 
-                                        <label for="telefone">Telefone</label>
-                                        <input type="text" id="telefone" name="telefone">
+        <div class="input-box">
+          <span class="details">Telefone</span>
+          <input type="text" placeholder="Digite o telefone">
+        </div>
 
-                                        <label for="celular">Celular</label>
-                                        <input type="text" id="celular" name="celular">
-                                    </div>
-                                    <div class="r-left">
-                                        <label for="cpf">CPF</label>
-                                        <input type="text" id="cpf" name="cpf">
+        <div class="input-box">
+          <span class="details">Celular</span>
+          <input type="text" id="cidade" name="cidade" placeholder="Digite o celular">
+        </div>
 
-                                        <label for="cidade">Cidade</label>
-                                        <input type="text" id="cidade" name="cidade">
+        <div class="input-box">
+          <span class="details">Data de nascimento</span>
+          <input type="date" placeholder="Digite a data de nascimento">
+        </div>
 
-                                        <label for="data_nascimento">Data de Nascimento</label>
-                                        <input type="date" id="data_nascimento" name="data_nascimento">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="right">
-                                <header class="right-header">
-                                    <h1>Consulta</h1>
-                                </header>
-                                <div class="right-column">
-                                    <div class="r-left">
-                                        <label for="od">OD</label>
-                                        <input class="input" type="text" id="od" name="od">
-
-                                        <label for="oe">OE</label>
-                                        <input class="input" type="text" id="oe" name="oe">
+        <div class="input-box">
+          <span class="details">Cidade</span>
+          <input type="text" id="cidade" name="cidade" placeholder="Digite a cidade">
+        </div>
 
 
-                                        <label for="altura_od">Altura OD</label>
-                                        <input type="text" id="altura_od" name="altura_od">
+      </div>
 
-                                        <label for="adicao">Adição</label>
-                                        <div class="adicao-inputs">
-                                            <input type="number" id="adicao" name="adicao" step="0.05" placeholder="0.00" style="width: 170px;
-                                            height: 35px;
-                                            border: 1px solid rgba(0, 0, 0, 0.15);
-                                            box-sizing: border-box;
-                                            box-shadow: 0px 0px 6px 2px #da60dd;
-                                            border-radius: 10px;
-                                            margin-bottom: 10px;
-                                            padding: 8px 12px;
-                                            margin-left: 15px;">
-                                        </div>
-                                        <label for="medico">Médico</label>
-                                        <input type="text" id="medico" name="medico">
+      <div class="button">
+        <input type="submit" value="Cadastrar">
+      </div>
 
-                                        <label for="nr_pedido">NR Pedido</label>
-                                        <input id="nr_pedido" name="nr_pedido" style="width: 170px;
-                                        padding: 8px 12px;
-                                        margin-bottom: 10px;
-                                        border: 1px solid rgba(0, 0, 0, 0.15);
-                                        border-radius: 4px;
-                                        box-sizing: border-box;
-                                        box-shadow: 0px 0px 6px 2px #da60dd;
-                                        border-radius: 10px;"></input>
+      <div class="button">
+        <a href="/Index/index.php" class="button">
+            <input type="button" value="Cancelar" style="margin-top: 10px">
+        </a>
+      </div>
 
-                                        <label for="lente">Lente (LT)</label>
-                                        <input type="text" id="lente" name="lente">
+    </form>
 
-                                    </div>
-                                    <div class="r-right">
-                                        <label for="dnp_od">DNP OD</label>
-                                        <input type="text" id="dnp_od" name="dnp_od">
+ </div>
 
-                                        <label for="dnp_oe">DNP OE</label>
-                                        <input type="text" id="dnp_oe" name="dnp_oe">
-
-
-                                        <label for="altura_oe">Altura OE</label>
-                                        <input type="text" id="altura_oe" name="altura_oe">
-
-                                        <label for="data_consulta">Data da Consulta</label>
-                                        <input type="date" id="data_consulta" name="data_consulta">
-
-                                        <label for="responsavel">Responsável</label>
-                                        <input type="text" id="responsavel" name="responsavel">
-
-                                        <label for="armacao">Armação (AR)</label>
-                                        <input type="text" id="armacao" name="armacao">
-
-                                        <label for="valor" style="text-align: center;">Valor</label>
-                                        <input type="number" id="valor" name="valor" step="0.01" placeholder="0.00" style="width: 170px;
-                                            padding: 8px 12px;
-                                            margin-bottom: 10px;
-                                            border: 1px solid rgba(0, 0, 0, 0.15);
-                                            border-radius: 4px;
-                                            box-sizing: border-box;
-                                            box-shadow: 0px 0px 6px 2px #da60dd;
-                                            border-radius: 10px;" />
-                                    </div>
-                                </div>
-                            </div>
-                            <br><br>
-                            <div class="form-center">
-                                <div class="center-column">
-                                    <div class="c-left">
-                                        <!-- <label for="lente">Lente (LT)</label>
-                                        <input type="text" id="lente" name="lente"> -->
-                                        <!-- <label for="armacao">Armação (AR)</label>
-                                        <input type="text" id="armacao" name="armacao"> -->
-                                    </div>
-                                    <div class="c-right">
-
-                                        <!-- <label for="responsavel">Responsável</label>
-                                        <input type="text" id="responsavel" name="responsavel" style="margin-left: 15px;"> -->
-                                    </div>
-                                    <div>
-                                        <!-- <label for="nr_pedido">NR Pedido</label>
-                                        <input id="nr_pedido" name="nr_pedido" style="width: 170px;
-                                        padding: 8px 12px;
-                                        margin-bottom: 10px;
-                                        border: 1px solid rgba(0, 0, 0, 0.15);
-                                        border-radius: 4px;
-                                        box-sizing: border-box;
-                                        box-shadow: 0px 0px 6px 2px #da60dd;
-                                        border-radius: 10px;"></input> -->
-
-                                        <!-- <label for="valor" style="text-align: center;">Valor</label>
-                                        <input type="number" id="valor" name="valor" step="0.01" placeholder="0.00" style="width: 170px;
-                                            padding: 8px 12px;
-                                            margin-bottom: 10px;
-                                            border: 1px solid rgba(0, 0, 0, 0.15);
-                                            border-radius: 4px;
-                                            box-sizing: border-box;
-                                            box-shadow: 0px 0px 6px 2px #da60dd;
-                                            border-radius: 10px;
-                                            margin-left: -15px" /> -->
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="obs">
-                                    <label for="observacao">Observação</label>
-                                    <textarea id="observacao" name="observacao"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-    </section>
 </body>
 </html>

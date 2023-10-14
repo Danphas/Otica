@@ -104,24 +104,6 @@ function obterUltimoIDGeral($mysqli)
   <title>Cadastros - Cliente e consulta</title>
 </head>
 <body>
-
-  <!-- <nav>
-    <a href="/Index/index.php"><img src="/Img/logo.png" alt="logo" class="logo"></a>
-    <form action="\buscar_cliente\buscar_cliente.php" method="GET">
-        <div class="search-box">
-            <input type="search" class="search-text" name="term" placeholder="Pesquisar...">
-            <button type="submit">🔍</button>
-        </div>
-    </form>
-    <ul>
-        <li><span class='user'>
-                <?php echo $_SESSION['login']; ?>
-            </span></li>
-        <li><a href="logout.php">Sair</a></li>
-    </ul>
-  </nav>
-  <br> -->
-
   <div class="container">
     <div class="title">Cliente</div>
 
@@ -160,108 +142,14 @@ function obterUltimoIDGeral($mysqli)
 
       </div>
 
-      <div class="button">
-        <button type="submit" name="outras_submit" value="Enviar">Cadastrar</button>
+       <div class="b-cadcan button">
+          <div id="cad">
+            <button type="submit" name="outras_submit" value="Enviar">Enviar</button>
+       </div>
+        <div id="cancel">
+          <a href="/Index/index.php"><button type="button">Cancelar</button></a>
+        </div>
       </div>
-
-      <div class="button">
-      <a href="/Index/index.php"><button type="button">Cancelar</button></a>
-      </div>
-
-    </form>
-
-  </div>
-
-  <div class="container">
-    <div class="title">Consulta</div>
-
-    <form action="#">
-      <div class="user-details">
-        <div class="input-box">
-          <span class="details">OD</span>
-          <input class="input" type="text" id="od" name="od" placeholder="Grau OD">
-        </div>
-
-        <div class="input-box">
-          <span class="details">DNP OD</span>
-          <input type="text" id="dnp_od" name="dnp_od" placeholder="Insira o DNP">
-        </div>
-
-        <div class="input-box">
-          <span class="details">Altura OD</span>
-          <input type="text" placeholder="Digite a altura">
-        </div>
-
-        <div class="input-box">
-          <span class="details">OE</span>
-          <input class="input" type="text" id="oe" name="oe" placeholder="Grau OE">
-        </div>
-
-        <div class="input-box">
-          <span class="details">DNP OE</span>
-          <input type="text" id="dnp_oe" name="dnp_oe"  placeholder="Insira o DNP">
-        </div>
-
-        <div class="input-box">
-          <span class="details">Altura OE</span>
-          <input type="text" id="altura_oe" name="altura_oe" placeholder="Digite a altura">
-        </div>
-
-        <div class="input-box">
-          <span class="details">Adição</span>
-          <input type="number" id="adicao" name="adicao" step="0.05" placeholder="0.00" placeholder="Digite a adição">
-        </div>
-
-        <div class="input-box">
-          <span class="details">Data da consulta</span>
-          <input type="date" placeholder="Digite a data de nascimento">
-        </div>
-
-        <div class="input-box">
-          <span class="details">Médico</span>
-          <input type="text" id="medico" name="medico" placeholder="Nome do médico">
-        </div>
-
-        <div class="input-box">
-          <span class="details">Responsável</span>
-          <input type="text" id="responsavel" name="responsavel" placeholder="Resp atendimento">
-        </div>
-
-        <div class="input-box">
-          <span class="details">NR Pedido</span>
-          <input id="nr_pedido" name="nr_pedido" placeholder="Ex. 234567">
-        </div>
-
-        <div class="input-box">
-          <span class="details">Armação (AR)</span>
-          <input type="text" id="armacao" name="armacao" placeholder="Insira o AR">
-        </div>
-
-        <div class="input-box">
-          <span class="details">Lente (LT)</span>
-          <input type="text" id="lente" name="lente" placeholder="Ex. policarbonato">
-        </div>
-
-        <div class="input-box">
-          <span class="details">Valor</span>
-          <input type="number" id="valor" name="valor" placeholder="R$0.00">
-        </div>
-
-
-        <div class="input-box">
-          <span class="details">Observação</span>
-          <input type="text" id="observacao" name="observacao" placeholder="Ex. volta dia xx">
-        </div>
-
-      </div>
-
-      <div class="button">
-        <input type="submit" value="Cadastrar">
-      </div>
-
-      <div class="button">
-      <button type="submit" name="outras_submit" value="Enviar">Enviar</button>
-      <div class="button">
 
     </form>
 
