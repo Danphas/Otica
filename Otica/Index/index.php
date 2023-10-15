@@ -61,7 +61,7 @@ if (!$resultado) {
     <br>
     <div class="container">
         <button id="nc"><a href="/Cadastro/cadastro.php" style="text-decoration: none; color: white;">Novo
-                Cliente</a></button>
+                Cliente TESTE UPDATE</a></button>
 
         <button id="c"><a href="/Consultar/consultar.php" style="text-decoration: none;">Consultar (por data)</a>
         </button>
