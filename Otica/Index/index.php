@@ -55,7 +55,7 @@ if (!$resultado) {
             <li><span class='user'>
                     <?php echo $_SESSION['login']; ?>
                 </span></li>
-            <li><a href="logout.php">Sair (teste)</a></li>
+            <li><a href="logout.php">Sair</a></li>
         </ul>
     </nav>
     <br>
