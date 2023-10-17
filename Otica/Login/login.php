@@ -36,85 +36,36 @@ if (isset($_POST['login']) && isset($_POST['senha'])) {
 }
 ?>
 
-
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="\Img\favicon.ico" type="image/x-icon">
     <title>Ótica Cientifica</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="page" class="flex">
-      <div>
-        <header>
-          <img src="/Otica/Img/logo.png" alt="Otica Cientifica">
-        </header>
-        <main>
-          <div class="headline">
-            <h1>Acesse a plataforma</h1>
-            <p>
-              Faça login para efetuar os cadastros.
-            </p>
-          </div>
-          <form method="POST">
-            <div class="input-wrapper">
-              <label for="email">E-mail</label>
-              <input type="text" name="login" placeholder="Login" required>
-            </div>
+</head>
 
-            <div class="input-wrapper">
-              <div class="label-wrapper flex">
-                <label for="senha"> Senha </label>
-              </div>
-
-              <input type="password" name="senha" placeholder="Senha">
-
-              <img
-                onclick="togglePassword()"
-                class="eye"
-                src="./assets/eye-off.svg"
-                alt=""
-              />
-              <img
-                onclick="togglePassword()"
-                class="eye hide"
-                src="./assets/eye.svg"
-                alt=""
-              />
-            </div>
-
-            <button type="submit">Entrar</button>
-          </form>
-
-          <?php if (isset($error)) {
+<body>
+    <section class="container">
+        <div class="left">
+            <form method="POST">
+                <h2>Login</h2>
+                <input type="text" name="login" placeholder="Login">
+                <input type="password" name="senha" placeholder="Senha">
+                <button type="submit">Entrar</button>
+            </form>
+            <?php if (isset($error)) {
                 echo "<p>$error</p>";
             } ?>
-        </main>
-      </div>
-      <img src="./assets/bg.jpg" alt="" />
-    </div>
+        </div>
 
-    <script>
-      function togglePassword() {
-        document
-          .querySelectorAll(".eye")
-          .forEach((eye) => eye.classList.toggle("hide"))
+        <div class="right">
+            <img src="/Img/login" alt="Otica Cientifica">
+        </div>
+    </section>
+</body>
 
-        const type =
-          senha.getAttribute("type") == "password" ? "text" : "password"
-
-        senha.setAttribute("type", type)
-      }
-    </script>
-  </body>
 </html>
