@@ -25,6 +25,25 @@ $cpf = $row['cpf'];
 $cidade = $row['cidade'];
 $data_nascimento = $row['data_nascimento'];
 
+// Processar a atualização dos dados do cliente
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
+  $nome_cliente = $_POST['nome_cliente'];
+  $telefone = $_POST['telefone'];
+  $celular = $_POST['celular'];
+  $cpf = $_POST['cpf'];
+  $cidade = $_POST['cidade'];
+  $data_nascimento = $_POST['data_nascimento'];
+
+  $updateQuery = "UPDATE clientes SET nome_cliente = '$nome_cliente', telefone = '$telefone', celular = '$celular', cpf = '$cpf', cidade = '$cidade', data_nascimento = '$data_nascimento' WHERE id_cliente = '$id_cliente'";
+  if ($mysqli->query($updateQuery)) {
+    echo "Dados atualizados com sucesso!";
+  } else {
+    echo "Erro ao atualizar os dados: " . $mysqli->error;
+  }
+}
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (isset($_POST['delete'])) {
     $deleteVendasQuery = "DELETE FROM vendas WHERE id_cliente = '$id_cliente'";
@@ -81,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
               <div class="b-cadcan">
                 <div id="cad">
-                  <button type="submit" name="outras_submit" value="Enviar">Enviar</button>
+                  <button type="submit" name="update" value="Enviar">Enviar</button>
                 </div>
                 <div id="cancel">
                   <button type="submit" name="delete">Apagar</button>
