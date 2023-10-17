@@ -56,9 +56,9 @@ if (isset($_POST['login']) && isset($_POST['senha'])) {
   <body>
     <div id="page" class="flex">
       <div>
-        <header>
+        <!-- <header>
           <img src="/Otica/Img/logo.png" alt="Otica Cientifica">
-        </header>
+        </header> -->
         <main>
           <div class="headline">
             <h1>Acesse a plataforma</h1>
@@ -69,7 +69,7 @@ if (isset($_POST['login']) && isset($_POST['senha'])) {
           <form method="POST">
             <div class="input-wrapper">
               <label for="email">Usuário</label>
-              <input type="text" name="login" placeholder="Login" required>
+              <input type="text" name="login" placeholder="Usuário" required>
             </div>
 
             <div class="input-wrapper">
