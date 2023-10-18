@@ -33,6 +33,10 @@ if (!$resultado) {
 
 <head>
     <meta charset="UTF-8">
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"
+    ></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
@@ -47,8 +51,12 @@ if (!$resultado) {
         <a href="/Index/index.php"><img src="/Img/logo.png" alt="logo" class="logo"></a>
         <form action="\buscar_cliente\buscar_cliente.php" method="GET">
             <div class="search-box">
-                <input type="search" class="search-text" name="term" placeholder="Pesquisar...">
-                <button type="submit">🔍</button>
+                <input type="search" class="search-txt" name="term" placeholder="Pesquisar...">
+                <button type="submit">
+                    <a href="#" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </button>
             </div>
         </form>
         <ul>
