@@ -58,7 +58,11 @@ ul li:nth-child(2) a {
 } */
 
 .search-box {
-  position: absolute;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-bottom: 60px; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, 50%);
