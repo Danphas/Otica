@@ -50,14 +50,28 @@ if (!$resultado) {
     <nav>
         <a href="/Index/index.php"><img src="/Img/logo.png" alt="logo" class="logo"></a>
         <form action="\buscar_cliente\buscar_cliente.php" method="GET">
-            <div class="search-box">
-                <input type="search" class="search-txt" name="term" placeholder="Pesquisar...">
-                <button type="submit">
-                    <a href="#" class="search-btn">
+            <!-- <div class="search-box">
+                <input type="search" class="search-txt" name="term" placeholder="Pesquisar..."> -->
+                <!-- <button type="submit">
+                </button> -->
+                    <!-- <a href="#" class="search-btn">
                         <i class="fas fa-search"></i>
                     </a>
-                </button>
+            </div> -->
+
+            <div class="search-box">
+                <input
+                class="search-txt"
+                type="text"
+                name=""
+                placeholder="Pesquise pelo nome"
+            />
+            <a href="#" class="search-btn">
+                <i class="fas fa-search"></i>
+            </a>
             </div>
+
+
         </form>
         <ul>
             <li><span class='user'>
