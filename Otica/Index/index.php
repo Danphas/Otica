@@ -52,11 +52,11 @@ if (!$resultado) {
         <form action="\buscar_cliente\buscar_cliente.php" method="GET">
             <div class="search-box">
                 <input type="search" class="search-txt" name="term" placeholder="Insira o nome">
-
-                    <a href="\buscar_cliente\buscar_cliente.php" class="search-btn">
-                        <i class="fas fa-search"></i>
-                    </a>
-
+                    <button type="submit" class="search-btn">
+                        <a href="" class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </button>
             </div>
         </form>
 
