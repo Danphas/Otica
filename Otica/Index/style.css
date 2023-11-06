@@ -172,7 +172,7 @@ ul li:nth-child(2) a {
 }
 
 #c:hover {
-  background-color: rgba(255, 255, 255, 0.459);
+  background-color: white;
   color: white;
   border: 1px solid #000000;
 }

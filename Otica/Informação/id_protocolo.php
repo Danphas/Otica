@@ -122,8 +122,12 @@ if (isset($_POST['delete_submit'])) {
         <a href="/Index/index.php"><img src="/Img/logo.png" alt="logo" class="logo"></a>
         <form action="\buscar_cliente\buscar_cliente.php" method="GET">
             <div class="search-box">
-                <input type="search" class="search-text" name="term" placeholder="Pesquisar...">
-                <button type="submit">🔍</button>
+                <input type="search" class="search-box__input" name="term" placeholder="Insira o nome">
+                    <button type="submit" class="search-btn">
+                        <a href="" class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </button>
             </div>
         </form>
         <ul>

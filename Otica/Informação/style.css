@@ -33,25 +33,20 @@ ul li:nth-child(2) a {
 
 /**/
 
-.search-box :hover,
-.search-box :focus {
-  background-color: white;
+.search-box {
+  display: flex;
+
+  /* Se você quiser colocar o ícone antes da entrada de texto */
+  flex-direction: row-reverse;
+
+  /* Border */
+  border: 1px solid #d1d5db;
 }
 
-.search-text {
-  margin: 1px solid;
-  background-color: #2c2a2a;
-  border-radius: 15px;
-  box-shadow: none;
-  border: 1px solid white;
-  padding-left: 10px;
-}
-
-.search-box button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  color: white;
+.search-box__input {
+  border-color: transparent;
+  /* Pegar a largura disponível */
+  flex: 1;
 }
 
 .user {
