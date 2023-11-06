@@ -18,7 +18,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 65px;
-  background: #353b48;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
   padding: 0 10px;
 }
 
@@ -36,77 +36,6 @@ ul li:nth-child(2) a {
   color: red;
   margin-left: 10px;
 }
-
-/* .search-box :hover,
-.search-box :focus {
-  background-color: white;
-} */
-
-/*
-.search-text {
-  margin: 1px solid;
-  background-color: #2c2a2a;
-  border-radius: 15px;
-  box-shadow: none;
-  border: 1px solid white;
-  padding-left: 10px;
-}
-
-.search-box button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-} */
-
-/* .search-box {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 68px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  background: #353b48;
-  height: 40px;
-  border-radius: 40px;
-  padding: 10px;
-}
-
-.search-btn {
-  color: #00a8ff;
-  float: right;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #353b48;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 2s;
-}
-
-.search-txt {
-  border: none;
-  background: none;
-  outline: none;
-  float: left;
-  padding: 0;
-  color: white;
-  font-size: 16px;
-  transition: 0.4s;
-  line-height: 40px;
-  width: 0px;
-}
-
-.search-box:hover > .search-txt {
-  width: 240px;
-  padding: 0 6px;
-}
-
-.search-box:hover > .search-btn {
-  background: white;
-}*/
 
 .search-box {
   display: flex;
@@ -139,7 +68,7 @@ ul li:nth-child(2) a {
 
 #nc {
   width: 134px;
-  background-color: #da60dd;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
   color: white;
   border: none;
   padding: 8px 12px;
@@ -157,12 +86,12 @@ ul li:nth-child(2) a {
 }
 
 #c a:hover {
-  color: black;
+  color: #052244;
 }
 
 #c {
   width: 170px;
-  background-color: black;
+  background-color: #035ad6bd;
   color: white;
   border: none;
   padding: 10px 10px;
@@ -201,7 +130,7 @@ ul li:nth-child(2) a {
   font-weight: 400;
   font-size: 20px;
   line-height: 29px;
-  background-color: #da60dd;
+  background-color: #7260dddb;
   color: rgb(255, 255, 255);
 }
 
