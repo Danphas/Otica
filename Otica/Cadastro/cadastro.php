@@ -162,7 +162,7 @@ function obterUltimoIDGeral($mysqli)
       </div>
 
       <div id="cad" class="button">
-        <input type="submit" value="Cadastrar">
+        <input type="submit" value="Cadastrar" style="background: green;">
       </div>
 
       <div id="cancel" class="button">
