@@ -86,7 +86,7 @@ ul li:nth-child(2) a {
 }
 
 #c a:hover {
-  color: #052244;
+  color: white;
 }
 
 #c {
@@ -101,11 +101,10 @@ ul li:nth-child(2) a {
 }
 
 #c:hover {
-  background-color: white;
+  background-color: #052244;
   color: white;
-  border: 1px solid #000000;
+  /* border: 1px solid; */
 }
-/**/
 
 .activity {
   margin-top: 20px;
