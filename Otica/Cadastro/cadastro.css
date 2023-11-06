@@ -128,7 +128,7 @@ form .button {
   margin: 60px 0;
 
   display: inline;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 form .button input {

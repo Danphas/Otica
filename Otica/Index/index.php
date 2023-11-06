@@ -51,7 +51,7 @@ if (!$resultado) {
         <a href="/Index/index.php"><img src="/Img/logo.png" alt="logo" class="logo"></a>
         <form action="\buscar_cliente\buscar_cliente.php" method="GET">
             <div class="search-box">
-                <input type="search" class="search-txt" name="term" placeholder="Insira o nome">
+                <input type="search" class="search-box__input" name="term" placeholder="Insira o nome">
                     <button type="submit" class="search-btn">
                         <a href="" class="search-btn">
                             <i class="fas fa-search"></i>

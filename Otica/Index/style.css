@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap");
 
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .logo {
@@ -58,7 +58,7 @@ ul li:nth-child(2) a {
   cursor: pointer;
 } */
 
-.search-box {
+/* .search-box {
   position: relative;
   display: flex;
   justify-content: center;
@@ -106,15 +106,30 @@ ul li:nth-child(2) a {
 
 .search-box:hover > .search-btn {
   background: white;
+}*/
+
+.search-box {
+  display: flex;
+
+  /* Se você quiser colocar o ícone antes da entrada de texto */
+  flex-direction: row-reverse;
+
+  /* Border */
+  border: 1px solid #d1d5db;
+}
+
+.search-box__input {
+  border-color: transparent;
+  /* Pegar a largura disponível */
+  flex: 1;
 }
 
 .user {
   color: white;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: medium;
 }
 
-/**/
 .container {
   display: flex;
   justify-content: space-between;
@@ -146,19 +161,19 @@ ul li:nth-child(2) a {
 }
 
 #c {
-  width: 134px;
+  width: 170px;
   background-color: black;
   color: white;
   border: none;
-  padding: 8px 12px;
+  padding: 10px 10px;
   border-radius: 45px;
   text-decoration: none;
   cursor: pointer;
 }
 
 #c:hover {
-  background-color: white;
-  color: black;
+  background-color: rgba(255, 255, 255, 0.459);
+  color: white;
   border: 1px solid #000000;
 }
 /**/
@@ -181,7 +196,7 @@ ul li:nth-child(2) a {
 }
 
 #table-activity th {
-  font-family: 'Anek Malayalam';
+  font-family: "Anek Malayalam";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
