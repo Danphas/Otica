@@ -141,11 +141,12 @@ form .button input {
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 1px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  background: green;
 }
 
 form .button input:hover {
-  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  /* background: linear-gradient(-135deg, #71b7e6, #9b59b6); */
+  cursor: pointer;
 }
 
 @media (max-wdith: 584px) {
