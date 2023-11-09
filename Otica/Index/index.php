@@ -66,9 +66,12 @@ if (!$resultado) {
                     <?php echo $_SESSION['login']; ?>
                     </span>
                 </li>
-                <li><a href="logout.php">Sair</a></li>
+                <li>
+                    <a id="c" href="logout.php">Sair</a>
+                </li>
 
         </ul>
+
     </nav>
     <br>
     <div class="container">

@@ -40,12 +40,6 @@ nav a {
   width: 4rem;
 }
 
-.avatar__image {
-  /* Size */
-  height: 50%;
-  width: 50%;
-}
-
 ul {
   display: flex;
   justify-content: space-between;
