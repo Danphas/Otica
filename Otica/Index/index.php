@@ -61,10 +61,13 @@ if (!$resultado) {
         </form>
 
         <ul>
-            <li><span class='user'>
+            <li>
+                    <span class='user'>
                     <?php echo $_SESSION['login']; ?>
-                </span></li>
-            <li><a href="logout.php">Sair</a></li>
+                    </span>
+                </li>
+                <li><a href="logout.php">Sair</a></li>
+
         </ul>
     </nav>
     <br>

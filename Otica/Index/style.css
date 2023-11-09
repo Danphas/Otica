@@ -26,6 +26,26 @@ nav a {
   text-decoration: none;
 }
 
+.avatar {
+  /* Rounded border */
+  border-radius: 50%;
+
+  /* Center the content */
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  /* Size */
+  height: 4rem;
+  width: 4rem;
+}
+
+.avatar__image {
+  /* Size */
+  height: 50%;
+  width: 50%;
+}
+
 ul {
   display: flex;
   justify-content: space-between;
@@ -105,6 +125,7 @@ ul li:nth-child(2) a {
   color: white;
   /* border: 1px solid; */
 }
+/**/
 
 .activity {
   margin-top: 20px;
