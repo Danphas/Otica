@@ -13,7 +13,7 @@ body {
   left: 0;
   right: 0;
   height: 50px;
-  background-color: #2c2a2a;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
   padding: 0 10px;
   display: flex;
   justify-content: space-between;
@@ -36,7 +36,7 @@ ul li:nth-child(2) a {
   margin-left: 10px;
 }
 
-.search-box {
+/* .search-box {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -60,15 +60,40 @@ ul li:nth-child(2) a {
   border: none;
   cursor: pointer;
   color: white;
+} */
+
+.search-box {
+  display: flex;
+
+  /* Se você quiser colocar o ícone antes da entrada de texto */
+  flex-direction: row-reverse;
+
+  /* Border */
+  border: 1px solid #d1d5db;
+}
+
+.search-box__input {
+  border-color: transparent;
+  /* Pegar a largura disponível */
+  flex: 1;
 }
 
 .user {
   color: white;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: medium;
+  font-size: normal;
+  text-transform: uppercase;
 }
 
-/**/
+#c {
+  width: 170px;
+  background-color: #035ad6bd;
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 45px;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 .container {
   padding-top: 100px;
@@ -76,13 +101,8 @@ ul li:nth-child(2) a {
 
 table {
   width: 80%;
-  background: linear-gradient(
-    180deg,
-    #f89dfb 0%,
-    #ffffff 110.21%,
-    rgba(248, 157, 251, 0) 110.21%,
-    rgba(248, 157, 251, 0) 110.21%
-  );
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+
   border: 1px solid rgba(0, 0, 0, 0.1);
   filter: drop-shadow(5px 0px 5px rgba(223, 126, 225, 0.765625));
   border-radius: 50px 50px 0px 0px;

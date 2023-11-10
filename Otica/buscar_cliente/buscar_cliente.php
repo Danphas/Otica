@@ -30,6 +30,10 @@ $resultado = $stmt->get_result();
 
 <head>
     <meta charset="UTF-8">
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"
+    ></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
@@ -41,16 +45,20 @@ $resultado = $stmt->get_result();
     <nav class="navbar">
         <a href="/Index/index.php"><img src="/Img/logo.png" alt="logo" class="logo"></a>
         <form action="\buscar_cliente\buscar_cliente.php" method="GET">
-            <div class="search-box">
-                <input type="search" class="search-text" name="term" placeholder="Pesquisar...">
-                <button type="submit">🔍</button>
+              <div class="search-box">
+                <input type="search" class="search-box__input" name="term" placeholder="Insira o nome">
+                    <button type="submit" class="search-btn">
+                        <a href="" class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </button>
             </div>
         </form>
         <ul>
             <li><span class='user'>
                     <?php echo $_SESSION['login']; ?>
                 </span></li>
-            <li><a href="logout.php">Sair</a></li>
+            <li><a id="c" href="logout.php">Sair</a></li>
         </ul>
     </nav>
     <section class="container">
@@ -59,7 +67,7 @@ $resultado = $stmt->get_result();
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
-                    <th>CPF</th>
+                    <!-- <th>CPF</th> -->
                     <th>Cidade</th>
                     <th>Data Nascimento</th>
                 </tr>
@@ -71,7 +79,7 @@ $resultado = $stmt->get_result();
                         echo "<tr>";
                         echo "<td><a href='/Cliente/cliente.php?id=" . $row['id_cliente'] . "' class='table-row-link'>" . $row['id_cliente'] . "</a></td>";
                         echo "<td><a href='/Cliente/cliente.php?id=" . $row['id_cliente'] . "' class='table-row-link'>" . $row['nome_cliente'] . "</a></td>";
-                        echo "<td>" . $row['cpf'] . "</td>";
+                        // echo "<td>" . $row['cpf'] . "</td>";
                         echo "<td>" . $row['cidade'] . "</td>";
                         echo "<td>" . date('d/m/Y', strtotime($row['data_nascimento'])) . "</td>";
                         echo "</tr>";
