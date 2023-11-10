@@ -92,9 +92,9 @@ if (!$resultado) {
                     <th>
                         <span>Cliente</span>
                     </th>
-                    <th>
+                    <!-- <th>
                         <span>CPF</span>
-                    </th>
+                    </th> -->
                     <th>
                         <span>Valor</span>
                     </th>
@@ -104,9 +104,9 @@ if (!$resultado) {
                     <th>
                         <span>OE</span>
                     </th>
-                    <th>
+                    <!-- <th>
                         <span>Cidade</span>
-                    </th>
+                    </th> -->
                     <th>
                         <span>Observações</span>
                     </th>
@@ -124,11 +124,11 @@ if (!$resultado) {
                     echo "<tr>";
                     echo "<td><a href='/Cliente/cliente.php?id=" . $row['id_cliente'] . "'>" . $row['id_cliente'] . "</a></td>";
                     echo "<td><a href='/Cliente/cliente.php?id=" . $row['id_cliente'] . "'>" . $row['nome_cliente'] . "</a></td>";
-                    echo "<td>" . $row['cpf'] . "</td>";
+                    // echo "<td>" . $row['cpf'] . "</td>";
                     echo "<td>R$ " . $row['valor'] . "</td>";
                     echo "<td>" . $row['od'] . "</td>";
                     echo "<td>" . $row['oe'] . "</td>";
-                    echo "<td>" . $row['cidade'] . "</td>";
+                    // echo "<td>" . $row['cidade'] . "</td>";
                     echo "<td>" . $row['observacao'] . "</td>";
                     echo "<td><a href='/Informação/id_protocolo.php?id=" . $row['id_cliente'] . "&ic=" . $row['id_compra'] . "'>" . date("d/m/Y", strtotime($row['data_compra'])) . "</a></td>";
                     echo "<td>" . $row['responsavel'] . "</td>";
