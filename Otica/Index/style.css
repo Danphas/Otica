@@ -69,8 +69,8 @@ ul li:nth-child(2) a {
 
 .user {
   color: white;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: medium;
+  font-size: normal;
+  text-transform: uppercase;
 }
 
 .container {
@@ -139,7 +139,7 @@ ul li:nth-child(2) a {
 }
 
 #table-activity th {
-  font-family: "Anek Malayalam";
+  text-transform: uppercase;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
