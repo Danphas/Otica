@@ -115,10 +115,10 @@ td:last-child {
 }
 
 th {
-  font-family: "Arya";
+  font-family: "Poppins";
   font-style: normal;
-  font-weight: 500;
-  font-size: 30px;
+  font-weight: 400;
+  font-size: 20px;
   line-height: 30px;
   color: #ffffff;
 }
@@ -135,9 +135,9 @@ td {
 
 table a {
   text-decoration: none;
-  color: rgb(183, 0, 255);
+  color: #7260dddb;
 }
 
 table a:hover {
-  color: red;
+  color: rgb(183, 0, 255);
 }
