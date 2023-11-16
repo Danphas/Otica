@@ -15,7 +15,7 @@ if ($mysqli->connect_errno) {
 
 $currentDate = date("Y-m-d");
 
-$sql = "SELECT c.id_cliente, c.nome_cliente, c.cpf, v.valor, v.oe, v.od, c.cidade, v.observacao, v.data_compra, v.responsavel, v.id_compra
+$sql = "SELECT c.id_cliente, c.nome_cliente, c.telefone, c.celular, v.valor, v.oe, v.od, c.cidade, v.observacao, v.data_compra, v.responsavel, v.id_compra
         FROM Vendas v
         INNER JOIN Clientes c ON c.id_cliente = v.id_cliente
         WHERE v.data_compra = '$currentDate'";
@@ -92,9 +92,12 @@ if (!$resultado) {
                     <th>
                         <span>Cliente</span>
                     </th>
-                    <!-- <th>
-                        <span>CPF</span>
-                    </th> -->
+                    <th>
+                        <span>Telefone</span>
+                    </th>
+                    <th>
+                        <span>Celular</span>
+                    </th>
                     <th>
                         <span>Valor</span>
                     </th>
@@ -104,9 +107,6 @@ if (!$resultado) {
                     <th>
                         <span>OE</span>
                     </th>
-                    <!-- <th>
-                        <span>Cidade</span>
-                    </th> -->
                     <th>
                         <span>Observações</span>
                     </th>
@@ -124,11 +124,11 @@ if (!$resultado) {
                     echo "<tr>";
                     echo "<td><a href='/Cliente/cliente.php?id=" . $row['id_cliente'] . "'>" . $row['id_cliente'] . "</a></td>";
                     echo "<td><a href='/Cliente/cliente.php?id=" . $row['id_cliente'] . "'>" . $row['nome_cliente'] . "</a></td>";
-                    // echo "<td>" . $row['cpf'] . "</td>";
+                    echo "<td>" . $row['telefone'] . "</td>";
+                    echo "<td>" . $row['celular'] . "</td>";
                     echo "<td>R$ " . $row['valor'] . "</td>";
                     echo "<td>" . $row['od'] . "</td>";
                     echo "<td>" . $row['oe'] . "</td>";
-                    // echo "<td>" . $row['cidade'] . "</td>";
                     echo "<td>" . $row['observacao'] . "</td>";
                     echo "<td><a href='/Informação/id_protocolo.php?id=" . $row['id_cliente'] . "&ic=" . $row['id_compra'] . "'>" . date("d/m/Y", strtotime($row['data_compra'])) . "</a></td>";
                     echo "<td>" . $row['responsavel'] . "</td>";
