@@ -136,7 +136,7 @@ if (isset($_GET['id'])) {
     <div class="table-client">
         <div class="d-table">
             <div class="b-compra">
-                <button><a href="/Nova_Compra/new_compra-2.php?id=<?php echo $cliente_id; ?>&ic=<?php echo $next_id_compra; ?>" style="text-decoration: none; color: white;">Nova Compra</a></button>
+                <button><a href="/Nova_Compra/nova_compra.php?id=<?php echo $cliente_id; ?>&ic=<?php echo $next_id_compra; ?>" style="text-decoration: none; color: white;">Nova Compra</a></button>
             </div>
         </div>
 
