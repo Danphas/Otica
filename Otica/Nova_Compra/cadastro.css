@@ -142,6 +142,8 @@ form .button input {
   font-weight: 500;
   letter-spacing: 1px;
   background: green;
+  margin: 14px;
+  padding: 10px;
 }
 
 form .button input:hover {
