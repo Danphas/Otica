@@ -175,4 +175,5 @@ ul li:nth-child(2) a {
 .table-orders a {
   text-decoration: none;
   color: #0366d6;
+  font-weight: bolder;
 }
