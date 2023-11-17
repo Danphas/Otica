@@ -88,8 +88,7 @@ if (isset($_GET['id'])) {
         <div class="box-client">
             <div id="direita">
                 <span style="float: right; margin: 5px;">
-                    <span id="user-inf">Usuario Responsavel
-                        :</span>
+                    <span id="user-inf">Usuario logado:</span>
                     <span class="tbold">
                         <?php echo $responsavel; ?>
                     </span><br>
@@ -97,14 +96,6 @@ if (isset($_GET['id'])) {
                         :</span>
                     <span class="tbold">
                         <?php echo date('d/m/Y', strtotime($data_cadastro)); ?>
-                    </span><br>
-                    <span id="user-inf">Celular :</span>
-                    <span class="tbold">
-                        <?php echo $celular; ?>
-                    </span><br>
-                    <span id="user-inf">Telefone :</span>
-                    <span class="tbold">
-                        <?php echo $telefone; ?>
                     </span><br>
                 </span>
             </div>
@@ -126,6 +117,14 @@ if (isset($_GET['id'])) {
                 <span id="user-inf">Cidade :</span>
                 <span class="tbold">
                     <?php echo $cidade; ?>
+                </span><br>
+                <span id="user-inf">Celular :</span>
+                    <span class="tbold">
+                        <?php echo $celular; ?>
+                    </span><br>
+                    <span id="user-inf">Telefone :</span>
+                    <span class="tbold">
+                        <?php echo $telefone; ?>
                 </span><br>
             </div>
         </div>
