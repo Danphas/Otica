@@ -82,12 +82,13 @@ if (isset($_GET['id'])) {
     <div class="box">
         <div id="edit-client">
             <a href="/cad_edit/cad_edit.php?id=<?php echo $cliente_id; ?>">
-                <img class="edit-img" src="/Img/edit.svg" alt="Editar">
+                <img class="edit-img" src="/Img/edit.png" alt="Editar">
+                Editar cliente
             </a>
         </div>
         <div class="box-client">
             <div id="direita">
-                <span style="float: right; margin: 5px;">
+                <span style="float: right; margin-right: -245px;">
                     <span id="user-inf">Usuario logado:</span>
                     <span class="tbold">
                         <?php echo $responsavel; ?>
