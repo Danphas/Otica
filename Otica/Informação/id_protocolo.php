@@ -122,7 +122,17 @@ if (isset($_POST['delete_submit'])) {
 <body>
 
   <div class="container">
-    <div class="title">Cliente</div>
+    <div class="title">
+      <span>
+        ID Cliente: <?php echo $cliente_id; ?>
+      </span><br>
+      <span>
+        ID Compra: <?php echo $id_compra; ?>
+      </span><br>
+      <span>
+        Data do cadastro: <?php echo date('d/m/Y', strtotime($data_cadastro)); ?>
+      </span><br>
+    </div>
 
     <form action="#">
       <div class="user-details">
@@ -172,7 +182,7 @@ if (isset($_POST['delete_submit'])) {
   <div class="container">
     <div class="title">Consulta</div>
 
-    <form action="#">
+    <form method="POST">
       <div class="user-details">
         <div class="input-box">
           <span class="details">OD</span>
@@ -252,10 +262,14 @@ if (isset($_POST['delete_submit'])) {
 
       </div>
 
-      <div class="button">
-        <input type="submit" value="Cadastrar">
+      <div id="cad" class="button">
+        <button type="submit" name="outras_submit" value="Enviar">Enviar</button>
       </div>
 
+      <div id="cancel" class="button">
+        <button type="submit" name="delete_submit" value="Apagar">
+          <a href=""></a>Apagar</button>
+      </div>
     </form>
 
   </div>

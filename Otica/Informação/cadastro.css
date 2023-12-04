@@ -171,6 +171,28 @@ form .button input:hover {
 }
 
 
+
+#cad button {
+  background: #013d0e;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  /* box-shadow: #013d0e; */
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#cancel button {
+  background: #630000;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  /* box-shadow: #630000; */
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#cancel button a {
+  color: white;
+}
+
+
 @media (max-wdith: 584px) {
   .container {
     max-width: 100%;
