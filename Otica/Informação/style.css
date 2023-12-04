@@ -13,7 +13,7 @@ nav {
   align-items: center;
   height: 50px;
   background-color: #2c2a2a;
-  padding: 0 10px;
+  padding: 10px;
 }
 
 nav a {
@@ -31,7 +31,6 @@ ul li:nth-child(2) a {
   margin-left: 10px;
 }
 
-/**/
 
 .search-box {
   display: flex;
@@ -49,13 +48,12 @@ ul li:nth-child(2) a {
   flex: 1;
 }
 
+
 .user {
   color: white;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: medium;
 }
-
-/**/
 
 .box-client {
   padding: 10px;
@@ -63,11 +61,30 @@ ul li:nth-child(2) a {
 
 #edit-client {
   float: right;
-  padding: 10px;
+  height: 100%;
+  width: 250px;
+  color: #fff;
+  border: none;
+  border-radius: 60px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  background: green;
+  margin-top: 21px;
+  margin-left: 100px;
+  margin-right: 166px;
+  padding: 8px
+}
+
+#edit-client a {
+  text-decoration: none;
+  margin-left: 40px;
+  color: white;
 }
 
 .edit-img {
   width: 25px;
+  margin-bottom: -6px;
 }
 
 #user-inf {

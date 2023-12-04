@@ -135,17 +135,17 @@ function obterUltimoIDGeral($mysqli)
 
         <div class="input-box">
           <span class="details">CPF</span>
-          <input type="text" placeholder="Digite o CPF">
+          <input type="text" id="cpf" name="cpf" placeholder="Digite o CPF">
         </div>
 
         <div class="input-box">
           <span class="details">Telefone</span>
-          <input type="text" placeholder="Digite o telefone">
+          <input type="text" id="telefone" name="telefone" placeholder="Digite o telefone">
         </div>
 
         <div class="input-box">
           <span class="details">Celular</span>
-          <input type="text" id="cidade" name="cidade" placeholder="Digite o celular">
+          <input type="text" id="celular" name="celular" placeholder="Digite o celular">
         </div>
 
         <div class="input-box">

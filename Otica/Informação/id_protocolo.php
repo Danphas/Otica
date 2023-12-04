@@ -58,6 +58,7 @@ if (isset($_GET['id'])) {
         $cpf = $row_cliente['cpf'];
         $data_cadastro = $row_cliente['data_cadastro'];
         $cidade = $row_cliente['cidade'];
+        $data_nascimento = $row_cliente['data_nascimento'];
         $responsavel = $row_cliente['responsavel'];
         $celular = $row_cliente['celular'];
         $telefone = $row_cliente['telefone'];
@@ -68,6 +69,7 @@ if (isset($_GET['id'])) {
 }
 
 if (isset($_POST['outras_submit'])) {
+
     $data_consulta = $_POST['data_consulta'];
     $oe = $_POST['oe'];
     $dnp_oe = $_POST['dnp_oe'];
@@ -84,8 +86,8 @@ if (isset($_POST['outras_submit'])) {
     $valor = $_POST['valor'];
     $observacao = $_POST['observacao'];
 
-    $sql_update = "UPDATE vendas SET data_consulta = '$data_consulta', oe = '$oe', dnp_oe = '$dnp_oe', altura_oe = '$altura_oe', medico = '$medico', od = '$od', dnp_od = '$dnp_od', altura_od = '$altura_od', adicao = '$adicao', lente = '$lente', armacao = '$armacao', responsavel = '$responsavel', nr_pedido = '$nr_pedido', valor = '$valor', observacao = '$observacao' WHERE id_compra = '$id_compra'";
 
+    $sql_update = "UPDATE vendas SET data_consulta = '$data_consulta', oe = '$oe', dnp_oe = '$dnp_oe', altura_oe = '$altura_oe', medico = '$medico', od = '$od', dnp_od = '$dnp_od', altura_od = '$altura_od', adicao = '$adicao', lente = '$lente', armacao = '$armacao', responsavel = '$responsavel', nr_pedido = '$nr_pedido', valor = '$valor', observacao = '$observacao' WHERE id_compra = '$id_compra'";
 
     if ($mysqli->query($sql_update)) {
         header("Location: /Cliente/cliente.php?id=" . $cliente_id);
@@ -105,196 +107,158 @@ if (isset($_POST['delete_submit'])) {
 }
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="\Img\favicon.ico" type="image/x-icon">
-    <title>Compra</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="\Img\favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="cadastro.css">
+  <title>Dados - Cliente</title>
 </head>
-
 <body>
-    <nav>
-        <a href="/Index/index.php"><img src="/Img/logo.png" alt="logo" class="logo"></a>
-        <form action="\buscar_cliente\buscar_cliente.php" method="GET">
-            <div class="search-box">
-                <input type="search" class="search-box__input" name="term" placeholder="Insira o nome">
-                    <button type="submit" class="search-btn">
-                        <a href="" class="search-btn">
-                            <i class="fas fa-search"></i>
-                        </a>
-                    </button>
-            </div>
-        </form>
-        <ul>
-            <li><span class='user'>
-                    <?php echo $_SESSION['login']; ?>
-                </span></li>
-            <li><a href="logout.php">Sair</a></li>
-        </ul>
-    </nav>
-    <br>
-    <div class="box">
-        <div id="edit-client">
+
+  <div class="container">
+    <div class="title">Cliente</div>
+
+    <form action="#">
+      <div class="user-details">
+        <div class="input-box">
+          <span class="details">Nome Completo</span>
+          <input type="text" id="nome_cliente" name="nome_cliente" value="<?php echo $nome_cliente; ?>">
+        </div>
+
+        <div class="input-box">
+          <span class="details">CPF</span>
+          <input type="text" value="<?php echo $cpf; ?>">
+        </div>
+
+        <div class="input-box">
+          <span class="details">Telefone</span>
+          <input type="text" value="<?php echo $telefone; ?>">
+        </div>
+
+        <div class="input-box">
+          <span class="details">Celular</span>
+          <input type="text" id="celular" name="celular" value="<?php echo $celular; ?>">
+        </div>
+
+        <div class="input-box">
+          <span class="details">Data de nascimento</span>
+          <input type="date" value="<?php echo $data_nascimento; ?>">
+        </div>
+
+        <div class="input-box">
+          <span class="details">Cidade</span>
+          <input type="text" id="cidade" name="cidade" value="<?php echo $cidade; ?>">
+        </div>
+
+
+      </div>
+
+      <div id="edit-client">
             <a href="/cad_edit/cad_edit.php?id=<?php echo $cliente_id; ?>">
-                <img class="edit-img" src="/Img/edit.svg" alt="Editar">
+                Editar dados
             </a>
+      </div>
+
+    </form>
+
+  </div>
+
+  <div class="container">
+    <div class="title">Consulta</div>
+
+    <form action="#">
+      <div class="user-details">
+        <div class="input-box">
+          <span class="details">OD</span>
+          <input class="input" type="text" id="od" name="od" value="<?php echo $od; ?>">
         </div>
-        <div class="box-client">
-            <div id="direita">
-                <span style="float: right; margin: 5px;">
-                    <span id="user-inf">Usuario Responsavel
-                        :</span>
-                    <span class="tbold">
-                        <?php echo $responsavel; ?>
-                    </span><br>
-                    <span id="user-inf">Data Cadastro
-                        :</span>
-                    <span class="tbold">
-                        <?php echo date('d/m/Y', strtotime($data_cadastro)); ?>
-                    </span><br>
-                    <span id="user-inf">Celular :</span>
-                    <span class="tbold">
-                        <?php echo $celular; ?>
-                    </span><br>
-                    <span id="user-inf">Telefone :</span>
-                    <span class="tbold">
-                        <?php echo $telefone; ?>
-                    </span><br>
-                </span>
-            </div>
-            <div id="esquerda" style="margin: 5px;">
-                <span id="user-inf">Cliente ID :</span>
-                <span class="tbold">
-                    <?php echo $cliente_id; ?>
-                </span><br>
-                <span id="user-inf">Nome Cliente :</span>
-                <span class="tbold">
-                    <?php echo $nome_cliente; ?>
-                </span><br>
-                <span id="user-inf">CPF/CNPJ :</span>
-                <span class="tbold">
-                    <?php
-                    echo $cpf;
-                    ?>
-                </span><br>
-                <span id="user-inf">Cidade :</span>
-                <span class="tbold">
-                    <?php echo $cidade; ?>
-                </span><br>
-            </div>
+
+        <div class="input-box">
+          <span class="details">DNP OD</span>
+          <input type="text" id="dnp_od" name="dnp_od" value="<?php echo $dnp_od; ?>">
         </div>
-    </div>
-    <br>
 
-    <section class="cad-user">
-        <div class="container-form center-form">
-            <div class="form">
-                <div class="container">
-                    <form method="POST">
-
-                        <div class="b-cadcan">
-                            <div id="cad">
-                                <button type="submit" name="outras_submit" value="Enviar">Enviar</button>
-                            </div>
-                            <div id="cancel">
-                                <button type="submit" name="delete_submit" value="Apagar">Apagar</button>
-                            </div>
-
-                        </div>
-
-                        <div class="form-section">
-                            <div class="right">
-                                <header class="right-header">
-                                    <h1>
-                                        <?php echo $nome_cliente ?>
-                                    </h1>
-                                    <h2>
-                                        <?php echo date('d/m/Y', strtotime($data_compra)); ?>
-                                    </h2>
-                                </header>
-                                <div class="right-column">
-                                    <div class="r-left">
-                                        <label for="od">OD</label>
-                                        <input type="text" id="od" name="od" value="<?php echo $od; ?>">
-
-                                        <label for="oe">OE</label>
-                                        <input type="text" id="oe" name="oe" value="<?php echo $oe; ?>">
-
-                                        <label for="altura_od">Altura OD</label>
-                                        <input type="text" id="altura_od" name="altura_od" value="<?php echo $altura_od; ?>">
-
-                                        <label for="medico">Médico</label>
-                                        <input type="text" id="medico" name="medico" value="<?php echo $medico; ?>">
-
-                                    </div>
-                                    <div class="r-right">
-
-
-                                        <label for="dnp_od">DNP OD</label>
-                                        <input type="text" id="dnp_od" name="dnp_od" value="<?php echo $dnp_od; ?>">
-
-                                        <label for="dnp_oe">DNP OE</label>
-                                        <input type="text" id="dnp_oe" name="dnp_oe" value="<?php echo $dnp_oe; ?>">
-
-                                        <label for="altura_oe">Altura OE</label>
-                                        <input type="text" id="altura_oe" name="altura_oe" value="<?php echo $altura_oe; ?>">
-
-                                        <label for="data_consulta">Data da Consulta</label>
-                                        <input type="date" id="data_consulta" name="data_consulta" value="<?php echo $data_consulta; ?>">
-
-
-
-
-
-                                    </div>
-                                </div>
-                            </div>
-                            <br><br>
-                            <div class="form-center">
-                                <div class="center-column">
-                                    <div class="c-left">
-                                        <label for="adicao">Adição</label>
-                                        <div class="adicao-inputs">
-                                            <input type="number" id="adicao" name="adicao" step="0.05" placeholder="0.00" value="<?php echo $adicao; ?>">
-                                        </div>
-
-                                        <label for="lente">Lente (LT)</label>
-                                        <input type="text" id="lente" name="lente" value="<?php echo $lente; ?>">
-                                    </div>
-                                    <div class="c-right">
-                                        <label for="armacao">Armação (AR)</label>
-                                        <input type="text" id="armacao" name="armacao" value="<?php echo $armacao; ?>">
-
-                                        <label for="responsavel">Responsável</label>
-                                        <input type="text" id="responsavel" name="responsavel" value="<?php echo $responsavel; ?>">
-                                    </div>
-                                    <div>
-                                        <label for="nr_pedido">NR Pedido</label>
-                                        <input id="nr_pedido" name="nr_pedido" style="width: 170px; padding: 8px 12px; margin-bottom: 10px; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 4px; box-sizing: border-box; box-shadow: 0px 0px 6px 2px #da60dd; border-radius: 10px;" value="<?php echo $nr_pedido; ?>"></input>
-
-                                        <label for="valor">Valor</label>
-                                        <input type="number" id="valor" name="valor" step="0.01" min="0" placeholder="0.00" style="width: 170px; padding: 8px 12px; margin-bottom: 10px; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 4px; box-sizing: border-box; box-shadow: 0px 0px 6px 2px #da60dd; border-radius: 10px;" value="<?php echo $valor; ?>" />
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="obs">
-                                    <label for="observacao">Observação</label>
-                                    <textarea id="observacao" name="observacao"><?php echo $observacao; ?></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                </div>
-                </form>
-            </div>
+        <div class="input-box">
+          <span class="details">Altura OD</span>
+          <input type="text" value="<?php echo $altura_od; ?>">
         </div>
+
+        <div class="input-box">
+          <span class="details">OE</span>
+          <input class="input" type="text" id="oe" name="oe" value="<?php echo $oe; ?>">
         </div>
-    </section>
+
+        <div class="input-box">
+          <span class="details">DNP OE</span>
+          <input type="text" id="dnp_oe" name="dnp_oe" value="<?php echo $oe; ?>">
+        </div>
+
+        <div class="input-box">
+          <span class="details">Altura OE</span>
+          <input type="text" id="altura_oe" name="altura_oe" value="<?php echo $altura_oe; ?>">
+        </div>
+
+        <div class="input-box">
+          <span class="details">Adição</span>
+          <input type="number" id="adicao" name="adicao" value="<?php echo $adicao; ?>">
+        </div>
+
+        <div class="input-box">
+          <span class="details">Data da consulta</span>
+          <input type="date" value="<?php echo $data_consulta; ?>">
+        </div>
+
+        <div class="input-box">
+          <span class="details">Médico</span>
+          <input type="text" id="medico" name="medico" value="<?php echo $medico; ?>">
+        </div>
+
+        <div class="input-box">
+          <span class="details">Responsável</span>
+          <input type="text" id="responsavel" name="responsavel" value="<?php echo $responsavel; ?>">
+        </div>
+
+        <div class="input-box">
+          <span class="details">NR Pedido</span>
+          <input id="nr_pedido" name="nr_pedido" value="<?php echo $nr_pedido; ?>">
+        </div>
+
+        <div class="input-box">
+          <span class="details">Armação (AR)</span>
+          <input type="text" id="armacao" name="armacao" value="<?php echo $armacao; ?>">
+        </div>
+
+        <div class="input-box">
+          <span class="details">Lente (LT)</span>
+          <input type="text" id="lente" name="lente" value="<?php echo $lente; ?>">
+        </div>
+
+        <div class="input-box">
+          <span class="details">Valor</span>
+          <input type="number" id="valor" name="valor" value="<?php echo $valor; ?>">
+        </div>
+
+
+        <div class="input-box">
+          <span class="details">Observação</span>
+          <input type="text" id="observacao" name="observacao" value="<?php echo $observacao; ?>">
+        </div>
+
+      </div>
+
+      <div class="button">
+        <input type="submit" value="Cadastrar">
+      </div>
+
+    </form>
+
+  </div>
+
 </body>
-
 </html>
